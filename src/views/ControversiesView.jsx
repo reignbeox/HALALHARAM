@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Zap, ExternalLink, ChevronUp, ChevronDown } from 'lucide-react';
+import { AlertTriangle, ExternalLink, ChevronUp, ChevronDown } from 'lucide-react';
 import { CONTROVERSIES_DATA } from '../data/database';
 export default function ControversiesView() {
     const [activeControversy, setActiveControversy] = useState(null);
