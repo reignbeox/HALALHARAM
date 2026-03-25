@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Zap, ExternalLink, ChevronUp, ChevronDown } from 'lucide-react';
+import { ShieldAlert, ChevronDown, ChevronUp, ExternalLink, Zap } from 'lucide-react';
 import { DATABASE } from '../data/database';
 import { getStatusConfig, getStatusDot, getTabDot } from '../utils/helpers';
 
@@ -151,7 +151,11 @@ export default function DirectoryView({ activeTopic, navigateTo }) {
                     <h3 className="text-xs font-mono font-bold text-white uppercase tracking-widest mb-6">[ PRIMARY SOURCES & FATWAS ]</h3>
                     <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-8">
                       {activeItem.sources.map((source, idx) => (
-                        <button key={idx} className="inline-flex items-center gap-4 px-5 py-4 bg-zinc-900 border border-zinc-700 hover:border-[#ccff00] transition-colors text-left group">
+                        <button 
+                          key={idx} 
+                          onClick={() => source.link && window.open(source.link, '_blank', 'noopener,noreferrer')}
+                          className={`inline-flex items-center gap-4 px-5 py-4 bg-zinc-900 border border-zinc-700 hover:border-[#ccff00] transition-colors text-left group ${source.link ? 'cursor-pointer' : 'cursor-default'}`}
+                        >
                           <div className="bg-black p-2 border border-zinc-700 group-hover:border-[#ccff00] transition-colors"><ExternalLink className="w-4 h-4 text-zinc-400 group-hover:text-[#ccff00]" /></div>
                           <div>
                             <span className="block font-bold text-sm text-white uppercase tracking-wider mb-1 group-hover:text-[#ccff00] transition-colors">{source.title}</span>
