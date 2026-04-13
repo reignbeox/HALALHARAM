@@ -81,27 +81,30 @@ export default function Footer({ navigateTo }) {
                 <p className="text-zinc-500 font-mono text-[10px] mb-3 uppercase tracking-widest leading-normal">
                   Can't find a topic? Submit a query for manual research review. {status === 'ERROR' && <span className="text-[#ff003c] font-bold">// UPLINK FAILED //</span>}
                 </p>
-                <form className="flex flex-col sm:flex-row gap-0 shadow-[2px_2px_0_#000]" onSubmit={handleFormSubmit}>
-                  <div className="flex-grow flex relative border-2 border-zinc-700 bg-[#050505] focus-within:border-zinc-500 transition-colors">
-                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 font-mono font-black text-xs">&gt;</span>
-                    <input 
-                      type="text" 
-                      placeholder={status === 'SUBMITTING' ? "UPLINKING..." : "ENTER TOPIC OR MESSAGE..."}
-                      className="w-full pl-8 pr-3 py-2 bg-transparent text-white font-mono text-[10px] placeholder-zinc-600 focus:outline-none uppercase font-bold" 
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      disabled={status === 'SUBMITTING'}
-                      required 
-                    />
-                  </div>
-                  <button 
-                    type="submit" 
-                    disabled={status === 'SUBMITTING'}
-                    className="px-5 py-2 bg-zinc-800 text-white font-black font-mono text-[10px] uppercase tracking-widest hover:bg-[#ccff00] hover:text-black transition-colors border-y-2 border-r-2 border-zinc-700 whitespace-nowrap disabled:opacity-50"
-                  >
-                    {status === 'SUBMITTING' ? '...' : 'SEND'}
-                  </button>
-                </form>
+                {/* Removed the shadow class from the form below */}
+<form className="flex flex-col sm:flex-row gap-0" onSubmit={handleFormSubmit}>
+  <div className="flex-grow flex relative border-2 border-zinc-700 bg-[#050505] focus-within:border-zinc-500 transition-colors">
+    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 font-mono font-black text-xs">&gt;</span>
+    <input 
+      type="text" 
+      placeholder={status === 'SUBMITTING' ? "UPLINKING..." : "ENTER TOPIC OR MESSAGE..."}
+      className="w-full pl-8 pr-3 py-2 bg-transparent text-white font-mono text-[10px] placeholder-zinc-600 focus:outline-none uppercase font-bold" 
+      value={message}
+      onChange={(e) => setMessage(e.target.value)}
+      disabled={status === 'SUBMITTING'}
+      required 
+    />
+  </div>
+  
+  {/* Swapped text-white to text-zinc-100 so it ignores light-mode overrides */}
+  <button 
+    type="submit" 
+    disabled={status === 'SUBMITTING'}
+    className="px-5 py-2 bg-zinc-800 text-zinc-100 font-black font-mono text-[10px] uppercase tracking-widest hover:bg-[#ccff00] hover:text-black transition-colors border-y-2 border-r-2 border-zinc-700 whitespace-nowrap disabled:opacity-50"
+  >
+    {status === 'SUBMITTING' ? '...' : 'SEND'}
+  </button>
+</form>
               </div>
             )}
           </div>

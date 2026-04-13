@@ -2,7 +2,7 @@
 // THE FIQH DIRECTORY (Split for easy editing)
 // ==========================================
 
-const HALAL_DATA = [
+export const HALAL_DATA = [
   {
     id: 'h1', topic: "All Seafood", category: "Food, Dietary", status: "Halal", consensusLevel: "High",
     coreReasoning: '"Lawful to you is the game of the sea" (5:96).',
@@ -20,44 +20,45 @@ const HALAL_DATA = [
     id: 'h3', topic: "Lab-Grown Meat", category: "Tech, Future Food", status: "Halal", consensusLevel: "Moderate",
     coreReasoning: "Halal if the original cells are from a Halal-slaughtered animal and no impure growth mediums (like fetal bovine serum) are used.",
     schoolsOfThought: [{ school: "MUI & JAKIM", ruling: "Permitted with conditions" }],
-    sources: [{ title: "Fatwa on Cultivated Meat", author: "MUI Singapore" }],
+    sources: [{ title: "Fatwa on Cultivated Meat", author: "MUI Singapore", link: "https://www.muis.gov.sg/Media/Media-Releases/2024/Fatwa-on-Lab-Grown-Meat" }],
     differingOpinions: "If cells are extracted from a living animal without slaughter, it is considered Maytah (carrion) and Haram.", isNew: true
   },
   {
-    id: 'h4', topic: "AI-Assisted Income", category: "Finance, AI", status: "Halal", consensusLevel: "High",
-    coreReasoning: "Permissible as long as the work generated or assisted is ethical and halal in nature.",
-    schoolsOfThought: [{ school: "Contemporary Fiqh", ruling: "Permitted" }],
-    sources: [{ title: "Ethics of AI Income", author: "Islamic Finance Guru" }], differingOpinions: null, isNew: true
+    id: 'h4', topic: "AI Ethics & Development", category: "Tech, AI, Ethics, Tech, Income", status: "Halal", consensusLevel: "High",
+    coreReasoning: "Permissible and encouraged when AI systems preserve human dignity, ensure justice (Adl), avoid harm, and align with Maqasid al-Shariah (Objectives of Islamic Law) and global guidelines.",
+    schoolsOfThought: [{ school: "Contemporary Fiqh", ruling: "Permitted with ethical conditions" }],
+    sources: [{ title: "AI Ethics in Islamic Contents", author: "M. Jaber Thalgi", link: "https://www.researchgate.net/publication/390995255_AI_Ethics_in_Islamic_Contents_Applications_Per_UNESCO_Recommendations" }], 
+    differingOpinions: "AI systems built on biased data, that cause societal harm, or violate human privacy are strictly prohibited.", isNew: true
   },
   {
     id: 'h5', topic: "Equity Investing", category: "Finance", status: "Halal", consensusLevel: "High",
     coreReasoning: "Permissible if the company’s core business is Halal and it passes financial screening ratios (debt levels).",
     schoolsOfThought: [{ school: "AAOIFI", ruling: "Permitted with screening" }],
-    sources: [{ title: "Shariah Screening Criteria", author: "AAOIFI Standards" }], differingOpinions: null, isNew: false
+    sources: [{ title: "Shariah Screening Criteria", author: "AAOIFI Standards", link: "https://aaoifi.com/shariaa-standards/?lang=en" }], differingOpinions: null, isNew: false
   },
   {
     id: 'h6', topic: "Microbial Rennet", category: "Ingredients", status: "Halal", consensusLevel: "High",
     coreReasoning: "Common in cheese; a halal alternative to animal rennet as it is derived from mold/fungi.",
     schoolsOfThought: [{ school: "Consensus", ruling: "Permitted" }],
-    sources: [{ title: "Cheese Ingredients Guide", author: "Halal Food Authority" }], differingOpinions: null, isNew: false
+    sources: [{ title: "Cheese Ingredients Guide", author: "Halal Food Authority", link: "https://halalfoodauthority.com/cheese-rennet/" }], differingOpinions: null, isNew: false
   },
   {
     id: 'h7', topic: "Vinegar", category: "Food, Chemistry", status: "Halal", consensusLevel: "High",
     coreReasoning: "Permissible even if transformed from wine due to the principle of Istihalah (complete chemical transformation).",
     schoolsOfThought: [{ school: "Consensus", ruling: "Permitted" }],
-    sources: [{ title: "Hadith on Vinegar", author: "Sahih Muslim" }], differingOpinions: null, isNew: false
+    sources: [{ title: "Hadith on Vinegar", author: "Sahih Muslim", link: "https://sunnah.com/muslim:2052a" }], differingOpinions: null, isNew: false
   },
   {
     id: 'h8', topic: "Locusts", category: "Food, Insects", status: "Halal", consensusLevel: "High",
     coreReasoning: "The only insect explicitly permitted for consumption in Sahih Hadith without requiring slaughter.",
     schoolsOfThought: [{ school: "Consensus", ruling: "Permitted" }],
-    sources: [{ title: "Hadith on Two Dead Things", author: "Sunan Ibn Majah" }], differingOpinions: null, isNew: false
+    sources: [{ title: "Hadith on Two Dead Things", author: "Sunan Ibn Majah", link: "https://sunnah.com/ibnmajah:3218" }], differingOpinions: null, isNew: false
   },
   {
     id: 'h9', topic: "Vanilla Extract", category: "Food, Science", status: "Halal", consensusLevel: "Moderate",
     coreReasoning: "Permissible if the alcohol is used merely as a carrier/solvent and is heavily diluted, rendering it non-intoxicating.",
     schoolsOfThought: [{ school: "IFANCA", ruling: "Permitted (< 0.1% rule)" }],
-    sources: [{ title: "Rulings on Trace Alcohol", author: "IFANCA" }], differingOpinions: "Some scholars maintain a zero-tolerance policy on any added alcohol.", isNew: false
+    sources: [{ title: "Rulings on Trace Alcohol", author: "IFANCA", link: "https://ifanca.org/resources/fatwas/" }], differingOpinions: "Some scholars maintain a zero-tolerance policy on any added alcohol.", isNew: false
   },
   {
     id: 'h10', topic: "Organic Produce", category: "Ethics, Tayyib", status: "Halal", consensusLevel: "High",
@@ -67,70 +68,70 @@ const HALAL_DATA = [
   }
 ];
 
-const MAKRUH_DATA = [
+export const MAKRUH_DATA = [
   {
     id: 'm1', topic: "Smoking/Vaping", category: "Health, Lifestyle", status: "Makruh", consensusLevel: "Disputed",
     coreReasoning: "Many contemporary scholars now rule it 'Haram' due to definitive health harm, while classical views initially deemed it 'Makruh'.",
     schoolsOfThought: [{ school: "Modern Councils", ruling: "Haram" }, { school: "Traditional", ruling: "Makruh (Severely Disliked)" }],
-    sources: [{ title: "Fatwa on Tobacco", author: "Al-Azhar Fatwa Council" }], differingOpinions: "Increasing consensus is moving towards Haram due to medical evidence of self-harm.", isNew: false
+    sources: [{ title: "Fatwa on Tobacco", author: "Dar al-Ifta al-Misriyyah", link: "https://www.dar-alifta.org/en/fatwa/details/6007/smoking" }], differingOpinions: "Increasing consensus is moving towards Haram due to medical evidence of self-harm.", isNew: false
   },
   {
     id: 'm2', topic: "Cryptocurrency", category: "Finance, Tech", status: "Disputed", consensusLevel: "Low",
     coreReasoning: "Disputed; concerns over Gharar (extreme uncertainty) vs. its utility as a decentralized ledger/currency.",
     schoolsOfThought: [{ school: "State Councils (Egypt, Turkey)", ruling: "Haram" }, { school: "Independent Finance Muftis", ruling: "Permitted (Case-by-case)" }],
-    sources: [{ title: "Bitcoin Fatwa", author: "Mufti Faraz Adam" }], differingOpinions: "Some see it as purely speculative gambling, others as valid digital property (Mal).", isNew: false
+    sources: [{ title: "Bitcoin Fatwa", author: "Mufti Faraz Adam", link: "https://amanahadvisors.com/shariah-analysis-of-bitcoin/" }], differingOpinions: "Some see it as purely speculative gambling, others as valid digital property (Mal).", isNew: false
   },
   {
     id: 'm3', topic: "NFTs", category: "Finance, Art", status: "Disputed", consensusLevel: "Low",
     coreReasoning: "Depends entirely on the underlying asset. If the art is Halal and it provides utility, it may be permissible. If used for wash-trading/gambling, it is Haram.",
     schoolsOfThought: [{ school: "Contemporary Scholars", ruling: "Neutral (Depends on Use Case)" }],
-    sources: [{ title: "NFT Shariah Compliance", author: "Islamic Finance Guru" }], differingOpinions: null, isNew: true
+    sources: [{ title: "NFT Shariah Compliance", author: "Islamic Finance Guru", link: "https://www.islamicfinanceguru.com/articles/are-nfts-halal-or-haram" }], differingOpinions: null, isNew: true
   },
   {
     id: 'm4', topic: "Non-Zabihah Meat", category: "Dietary", status: "Makruh", consensusLevel: "Disputed",
     coreReasoning: "Some scholars allow meat slaughtered by 'People of the Book' (Ahlul Kitab) in Western countries, but many strictly forbid it unless the Islamic Zabihah method is verified.",
     schoolsOfThought: [{ school: "Minority View", ruling: "Permitted (Ahlul Kitab)" }, { school: "Majority View", ruling: "Haram/Makruh without verification" }],
-    sources: [{ title: "Quran 5:5 Context", author: "Tafsir Ibn Kathir", link: "https://quran.com/5/5" }], differingOpinions: "The debate centers on whether modern secular slaughterhouses qualify as 'People of the Book'.", isNew: false
+    sources: [{ title: "Quran 5:5 Context", author: "Tafsir Ibn Kathir", link: "https://quran.com/5:5/tafsirs/en-tafisr-ibn-kathir" }], differingOpinions: "The debate centers on whether modern secular slaughterhouses qualify as 'People of the Book'.", isNew: false
   },
   {
     id: 'm5', topic: "Shellfish (Shrimp/Crab)", category: "Food, Madhhab", status: "Makruh", consensusLevel: "Moderate",
     coreReasoning: "Halal for the majority of Muslims, but considered Makruh (disliked) or Haram in the Hanafi school of thought.",
     schoolsOfThought: [{ school: "Shafi'i, Maliki, Hanbali", ruling: "Halal" }, { school: "Hanafi", ruling: "Makruh Tahrimi" }],
-    sources: [{ title: "Fiqh of Seafood", author: "SeekersGuidance" }], differingOpinions: "Hanafis restrict permissible seafood strictly to anatomy resembling standard fish.", isNew: false
+    sources: [{ title: "Fiqh of Seafood", author: "SeekersGuidance", link: "https://seekersguidance.org/answers/hanafi-fiqh/are-shellfish-halal/" }], differingOpinions: "Hanafis restrict permissible seafood strictly to anatomy resembling standard fish.", isNew: false
   },
   {
     id: 'm6', topic: "Professional Gaming", category: "Lifestyle, Finance", status: "Makruh", consensusLevel: "Moderate",
     coreReasoning: "Permissible unless it involves loot boxes (gambling), explicit content, or leads to the neglect of obligatory prayers and duties.",
     schoolsOfThought: [{ school: "Contemporary Scholars", ruling: "Permitted with strict conditions" }],
-    sources: [{ title: "Fatwa on Esports", author: "IslamQA" }], differingOpinions: "Many view it as Makruh due to time-wasting (Laghw), even if no explicit Haram is present.", isNew: true
+    sources: [{ title: "Fatwa on Esports", author: "IslamQA", link: "https://islamqa.info/en/answers/2898/electronic-games" }], differingOpinions: "Many view it as Makruh due to time-wasting (Laghw), even if no explicit Haram is present.", isNew: true
   },
   {
     id: 'm7', topic: "Cosmetic Surgery", category: "Medical, Ethics", status: "Makruh", consensusLevel: "Moderate",
     coreReasoning: "Permissible for reconstructive purposes (accidents/defects). Strictly Haram for pure vanity (altering Allah's creation).",
     schoolsOfThought: [{ school: "Consensus", ruling: "Conditional (Intention-based)" }],
-    sources: [{ title: "Rulings on Beautification", author: "Dar al-Ifta" }], differingOpinions: null, isNew: false
+    sources: [{ title: "Rulings on Beautification", author: "Dar al-Ifta", link: "https://www.dar-alifta.org/en/fatwa/details/5993/cosmetic-surgery" }], differingOpinions: null, isNew: false
   },
   {
     id: 'm8', topic: "Snail Mucin", category: "Beauty", status: "Disputed", consensusLevel: "Low",
     coreReasoning: "Disputed based on whether the snail's secretion is considered 'pure' (Tahir) or 'filth' (Najis), and whether insects/mollusks can be utilized externally.",
     schoolsOfThought: [{ school: "Maliki", ruling: "Generally Permitted" }, { school: "Hanafi/Shafi'i", ruling: "Disputed/Disliked" }],
-    sources: [{ title: "Halal Cosmetics Standard", author: "SGS Halal" }], differingOpinions: "Topical use is less strictly regulated than consumption, leading to diverse opinions.", isNew: true
+    sources: [{ title: "Halal Cosmetics Standard", author: "SeekersGuidance", link: "https://seekersguidance.org/answers/shafii-fiqh/is-snail-mucin-halal/" }], differingOpinions: "Topical use is less strictly regulated than consumption, leading to diverse opinions.", isNew: true
   },
   {
     id: 'm9', topic: "Buying on Credit", category: "Finance", status: "Makruh", consensusLevel: "High",
     coreReasoning: "Permissible if absolutely no interest is paid (e.g., paying statement in full), but 'Disliked' (Makruh) culturally and textually due to the burden and danger of accumulating debt.",
     schoolsOfThought: [{ school: "Consensus", ruling: "Permitted (If 0% interest)" }],
-    sources: [{ title: "Hadith on Debt", author: "Sahih Bukhari" }], differingOpinions: null, isNew: false
+    sources: [{ title: "Hadith on Debt", author: "Sahih Bukhari", link: "https://sunnah.com/bukhari:2397" }], differingOpinions: null, isNew: false
   },
   {
     id: 'm10', topic: "Raw Garlic/Onion", category: "Social", status: "Makruh", consensusLevel: "High",
     coreReasoning: "Disliked (Makruh) to consume raw before going to the Masjid, out of respect for the angels and other worshippers.",
     schoolsOfThought: [{ school: "Consensus", ruling: "Makruh (Before congregational prayer)" }],
-    sources: [{ title: "Prophetic Tradition", author: "Sahih Muslim" }], differingOpinions: null, isNew: false
+    sources: [{ title: "Prophetic Tradition", author: "Sahih Muslim", link: "https://sunnah.com/muslim:564a" }], differingOpinions: null, isNew: false
   }
 ];
 
-const HARAM_DATA = [
+export const HARAM_DATA = [
   {
     id: 'hr1', topic: "Riba (Interest)", category: "Finance", status: "Haram", consensusLevel: "Absolute",
     coreReasoning: "Explicitly forbidden in the Quran. Includes paying or receiving interest in mortgages, loans, and savings accounts.",
@@ -159,13 +160,13 @@ const HARAM_DATA = [
     id: 'hr5', topic: "Short Selling", category: "Finance", status: "Haram", consensusLevel: "High",
     coreReasoning: "Selling what you do not currently own is explicitly forbidden in Islamic finance protocols.",
     schoolsOfThought: [{ school: "AAOIFI Consensus", ruling: "Haram" }],
-    sources: [{ title: "Hadith on Trade", author: "Sunan an-Nasa'i" }], differingOpinions: null, isNew: false
+    sources: [{ title: "Hadith on Trade", author: "Sunan an-Nasa'i", link: "https://sunnah.com/nasai:4613" }], differingOpinions: null, isNew: false
   },
   {
     id: 'hr6', topic: "Cochineal (E120)", category: "Ingredients, Beauty", status: "Haram", consensusLevel: "High",
     coreReasoning: "Red dye made from crushed bugs. Forbidden for consumption in the majority of traditional schools.",
     schoolsOfThought: [{ school: "Hanafi/Shafi'i", ruling: "Haram" }, { school: "Maliki", ruling: "Permitted" }],
-    sources: [{ title: "Ingredient Guide", author: "SANHA" }], differingOpinions: "Maliki school permits it, but standard Halal certifiers generally reject it.", isNew: false
+    sources: [{ title: "Ingredient Guide", author: "SANHA", link: "https://www.sanha.org.za/a/index.php/2014-04-18-09-51-17/faqs/1874-q-are-products-containing-carmine-halal" }], differingOpinions: "Maliki school permits it, but standard Halal certifiers generally reject it.", isNew: false
   },
   {
     id: 'hr7', topic: "Carrion (Dead Meat)", category: "Food", status: "Haram", consensusLevel: "Absolute",
@@ -177,21 +178,24 @@ const HARAM_DATA = [
     id: 'hr8', topic: "Foresight/Astrology", category: "Lifestyle, Spirituality", status: "Haram", consensusLevel: "Absolute",
     coreReasoning: "Seeking knowledge of the unseen through horoscopes, tarot, or stars is strictly forbidden and approaches Shirk.",
     schoolsOfThought: [{ school: "Absolute Consensus", ruling: "Haram" }],
-    sources: [{ title: "Hadith on Fortune Tellers", author: "Sahih Muslim" }], differingOpinions: null, isNew: false
+    sources: [{ title: "Hadith on Fortune Tellers", author: "Sahih Muslim", link: "https://sunnah.com/muslim:2230" }], differingOpinions: null, isNew: false
   },
   {
     id: 'hr9', topic: "Carnivorous Animals", category: "Food", status: "Haram", consensusLevel: "Absolute",
     coreReasoning: "Animals with fangs (lions, wolves) or birds with talons (eagles, hawks) are strictly prohibited for consumption.",
     schoolsOfThought: [{ school: "Absolute Consensus", ruling: "Haram" }],
-    sources: [{ title: "Hadith on Dietary Laws", author: "Sahih Bukhari" }], differingOpinions: null, isNew: false
+    sources: [{ title: "Hadith on Dietary Laws", author: "Sahih Bukhari", link: "https://sunnah.com/bukhari/72/77" }], differingOpinions: null, isNew: false
   },
   {
     id: 'hr10', topic: "Usury-based Insurance", category: "Finance", status: "Haram", consensusLevel: "High",
     coreReasoning: "Standard commercial insurance is often seen as containing Gharar (uncertainty) and Riba. Takaful (cooperative insurance) is the Halal alternative.",
     schoolsOfThought: [{ school: "IFA (OIC)", ruling: "Haram (Commercial)" }],
-    sources: [{ title: "Resolution on Insurance", author: "Islamic Fiqh Academy" }], differingOpinions: "Permitted ONLY when legally mandated by the state (e.g., auto insurance).", isNew: false
+    sources: [{ title: "Resolution on Insurance", author: "Islamic Fiqh Academy", link: "https://iifa-aifi.org/en/1769.html" }], differingOpinions: "Permitted ONLY when legally mandated by the state (e.g., auto insurance).", isNew: false
   }
 ];
+
+// Note: Ensure you update your main DATABASE export variable to combine these if you separated them!
+// export const DATABASE = [...HALAL_DATA, ...MAKRUH_DATA, ...HARAM_DATA];
 
 // Combines the arrays seamlessly for the UI Directory
 export const DATABASE = [...HALAL_DATA, ...MAKRUH_DATA, ...HARAM_DATA];
