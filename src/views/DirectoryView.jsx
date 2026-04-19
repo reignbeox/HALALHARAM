@@ -46,12 +46,12 @@ export default function DirectoryView({ activeTopic, navigateTo }) {
                 <div className="flex-grow">
                   <div className="flex flex-wrap gap-2 mb-10 border-b-2 border-zinc-800 pb-8">
   {['ALL', 'HALAL', 'MAKRUH / DISPUTED', 'HARAM'].map((filterItem) => (
-    <button 
+<button 
       key={filterItem}
       onClick={() => setDirectoryFilter(filterItem)}
       className={`filter-btn px-5 py-2 font-mono text-xs font-bold uppercase tracking-widest border-2 transition-all ${
         directoryFilter === filterItem 
-          ? 'active bg-black text-white border-black' 
+          ? 'active bg-white text-black border-white' // CHANGED: White fill, black text
           : 'bg-transparent text-zinc-500 border-zinc-800 hover:border-[#ccff00] hover:text-[#ccff00]'
       }`}
     >
