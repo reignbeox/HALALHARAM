@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class', // <--- ADD THIS LINE
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -7,10 +8,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Now Tailwind knows that "brand" means your specific neon green!
         brand: {
           DEFAULT: '#ccff00',
-          dark: '#668000', // You can even save your dark variants here
+          dark: '#668000',
           light: '#d4ff33', 
         }
       }

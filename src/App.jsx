@@ -18,22 +18,14 @@ export default function App() {
   const [isLightMode, setIsLightMode] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   
-  // App Navigation State
   const [currentView, setCurrentView] = useState('home');
   const [activeTopic, setActiveTopic] = useState(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  /**
-   * Navigation with Snappy Exit/Entry Logic
-   */
   const navigateTo = (view, topic = null) => {
-    // Guard clause: Only block if exactly the same view and topic
     if (view === currentView && topic === activeTopic) return;
-    
-    // Trigger Exit Transition
     setIsTransitioning(true);
     
-    // Wait for exit animation (300ms) before swapping content
     setTimeout(() => {
       setCurrentView(view);
       setActiveTopic(topic);
@@ -42,7 +34,6 @@ export default function App() {
     }, 300);
   };
 
-  // Listen for Header's custom event to trigger Sidebar
   useEffect(() => {
     const handleOpenSidebar = () => setIsSidebarOpen(true);
     document.addEventListener('open-sidebar', handleOpenSidebar);
@@ -52,73 +43,221 @@ export default function App() {
   return (
     <div className={`min-h-screen bg-[#050505] font-sans text-white flex flex-col selection:bg-[#ccff00] selection:text-black ${isLightMode ? 'light-mode' : ''}`}>
       
-{/* Centralized Style Block for Transitions and Light Mode */}
-<style>{`
-        /* Force permanent vertical scrollbar to prevent layout shift */
-        html {
-          overflow-y: scroll;
-        }
+      <style>{`
+        /* Core System Styles */
+        html { overflow-y: scroll; }
 
-        /* NEW: Flip hero gradient to dark for light mode */
-        .light-mode .hero-gradient {
-          background-image: linear-gradient(to right, #000000, #52525b) !important;
+        @keyframes viewEntry {
+          0% { opacity: 0; transform: translateY(15px) scale(0.99); }
+          100% { opacity: 1; transform: translateY(0) scale(1); }
         }
+        @keyframes viewExit {
+          0% { opacity: 1; transform: translateY(0) scale(1); }
+          100% { opacity: 0; transform: translateY(-10px) scale(0.99); }
+        }
+        .animate-view-snappy { animation: viewEntry 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .animate-view-exit { animation: viewExit 0.3s cubic-bezier(0.7, 0, 0.84, 0) forwards; }
 
-/* HIGHLIGHT MARKER STYLE: Lime text becomes black text on a lime box in light mode */
-        .light-mode .text-\\[\\#ccff00\\] { 
-          color: #000000 !important; 
-          background-color: #ccff00 !important;
-          /* Pro-trick: Using box-shadow acts like padding to make the box look slightly bigger without breaking your page layout! */
-          box-shadow: 0 0 0 0px #ccff00 !important; 
-          border-radius: 0px !important;
-        }
-        
-/* Flips the pitch-black controversy boxes to light gray in light mode */
-        .light-mode .controversy-header {
-          background-color: #f4f4f5 !important; /* Light zinc-100 */
-        }
-        .light-mode .controversy-pill {
-          background-color: #e4e4e7 !important; /* Slightly darker zinc-200 */
-          color: #3f3f46 !important; /* Dark gray text for readability */
-          border-color: #d4d4d8 !important;
-        }
-
-        /* Ensure any borders that were lime stay lime, but get a bit thicker so they don't look flimsy next to the boxes */
-        .light-mode .border-\\[\\#ccff00\\] {
-          border-color: #ccff00 !important;
-        }
-
-        /* Light Mode Theming */
+        /* --- LIGHT MODE GLOBAL OVERRIDES --- */
         .light-mode.bg-\\[\\#050505\\], .light-mode .bg-\\[\\#050505\\] { background-color: #fafafa !important; }
         .light-mode.bg-\\[\\#0a0a0a\\], .light-mode .bg-\\[\\#0a0a0a\\] { background-color: #ffffff !important; }
         .light-mode.text-white, .light-mode .text-white { color: #050505 !important; }
-        .light-mode .border-zinc-800 { border-color: #e4e4e7 !important; }
-
-        /* NEW: Grid inversion for Light Mode */
+        .light-mode .border-zinc-800, .light-mode .border-zinc-700 { border-color: #e4e4e7 !important; }
+        
         .light-mode .visual-grid {
           background-image: linear-gradient(to right, #000000 1px, transparent 1px), linear-gradient(to bottom, #000000 1px, transparent 1px) !important;
           opacity: 0.06 !important;
         }
 
-        /* Snappy View Entry Animation */
-        @keyframes viewEntry {
-          0% { opacity: 0; transform: translateY(15px) scale(0.99); }
-          100% { opacity: 1; transform: translateY(0) scale(1); }
+        /* Header & Logo */
+        .light-mode header.header-main { background-color: #ffffff !important; border-color: #e4e4e7 !important; }
+        .light-mode .logo-text { color: #000000 !important; }
+        .light-mode .moon-icon, .light-mode .star-icon { color: #000000 !important; fill: #000000 !important; }
+
+        /* --- Add to the Default (Dark) section of App.jsx --- */
+header.header-main {
+  background-color: #050505 !important;
+}
+
+        /* Directory UI Elements */
+        .light-mode .btn-return { background-color: #f4f4f5 !important; border-color: #d4d4d8 !important; color: #18181b !important; }
+        .light-mode .btn-return:hover { background-color: #ccff00 !important; color: #000000 !important; }
+        
+        .light-mode .source-card { background-color: #fafafa !important; border-color: #e4e4e7 !important; }
+        .light-mode .source-icon-bg { background-color: #ffffff !important; border-color: #d4d4d8 !important; }
+        .light-mode .source-title, .light-mode .title-text, .light-mode .body-text, .light-mode .section-title { color: #18181b !important; }
+
+        /* Table & Rulings */
+        .light-mode .table-container, .light-mode .table-container table, 
+        .light-mode .table-container tr, .light-mode .table-container td, 
+        .light-mode .table-container th { border-color: #e4e4e7 !important; }
+        
+        .light-mode .table-header-row { background-color: #f4f4f5 !important; border-bottom-color: #e4e4e7 !important; }
+        .light-mode .table-header-row th { color: #71717a !important; }
+        .light-mode .table-body { background-color: #ffffff !important; }
+        .light-mode .cell-text { color: #18181b !important; }
+        
+        .light-mode .table-body tr:hover { background-color: #f9f9fb !important; transition: background-color 0.2s ease; }
+        .light-mode .table-header-row:hover, .light-mode .table-header-row th:hover { background-color: #f4f4f5 !important; }
+
+        /* Differing Opinions */
+        .light-mode .differing-btn { color: #71717a !important; }
+        .light-mode .icon-box { background-color: #f4f4f5 !important; color: #18181b !important; }
+
+        /* Brand Elements */
+        .light-mode .hero-gradient { background-image: linear-gradient(to right, #000000, #52525b) !important; }
+        .light-mode .text-\\[\\#ccff00\\] { color: #000000 !important; background-color: #ccff00 !important; box-shadow: none !important; }
+        .light-mode .border-\\[\\#ccff00\\] { border-color: #ccff00 !important; }
+        .light-mode .marker-dot { background-color: #18181b !important; }
+
+        /* Controversies */
+        .light-mode .controversy-header { background-color: #f4f4f5 !important; }
+        .light-mode .controversy-pill { background-color: #e4e4e7 !important; color: #3f3f46 !important; border-color: #d4d4d8 !important; }
+
+        /* --- Add to the Light Mode section of your App.jsx style block --- */
+        
+        /* --- Add to the Light Mode section of your App.jsx --- */
+
+        /* 1. Base state of the icon box in Light Mode (replaces bg-black) */
+        .light-mode .source-icon-bg {
+          background-color: #f4f4f5 !important; /* Light Zinc */
+          border-color: #e4e4e7 !important;
+        }
+
+        /* 2. Base state of the icon itself (replaces text-zinc-500) */
+        .light-mode .source-icon-bg svg {
+          color: #a1a1aa !important; /* Zinc-400 */
+        }
+          
+
+        /* 3. INDIVIDUAL HOVER: When mouse is ONLY on the icon box */
+        .light-mode .source-icon-bg:hover {
+          background-color: #ccff00 !important;
+          border-color: #ccff00 !important;
+        }
+        .light-mode .source-icon-bg:hover svg {
+          color: #000000 !important;
+        }
+
+        /* 4. GROUP HOVER: When mouse is on the source box, highlight the box border & title */
+        .light-mode .source-card:hover {
+          border-color: #ccff00 !important;
+        }
+        .light-mode .source-card:hover .source-title {
+          color: #000000 !important;
         }
         
-        /* Snappy View Exit Animation */
-        @keyframes viewExit {
-          0% { opacity: 1; transform: translateY(0) scale(1); }
-          100% { opacity: 0; transform: translateY(-10px) scale(0.99); }
+         /* 3. Ensure the title text also highlights correctly on hover */
+        .light-mode .source-card:hover .source-title {
+          color: #000000 !important;
         }
 
-        .animate-view-snappy {
-          animation: viewEntry 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        /* 4. Fix the static (non-hover) state for the icon box so it's not a black void */
+        .light-mode .source-icon-bg {
+          background-color: #f4f4f5 !important; /* Zinc-100 */
+          border-color: #e4e4e7 !important;
+        }
+        
+        /* Add this to the .light-mode section of App.jsx */
+        .light-mode .bg-zinc-900.border-l-4.border-\\[\\#ff8800\\] {
+          background-color: #fff7ed !important; /* Very light orange bg */
+          color: #000000 !important; /* Deep burnt orange text */
+          border-color: #ff8800 !important;
+        }
+        
+        /* --- Add to the .light-mode section of App.jsx --- */
+
+        /* Marriage Cards & Detail Panels */
+        .light-mode .marriage-card, 
+        .light-mode .detail-panel {
+          background-color: #ffffff !important;
+          border-color: #ccff00 !important; /* Keep the Lime frame */
         }
 
-        .animate-view-exit {
-          animation: viewExit 0.3s cubic-bezier(0.7, 0, 0.84, 0) forwards;
+        /* Detail Text Colors */
+        .light-mode .detail-text {
+          color: #18181b !important; /* Dark Zinc text */
         }
+
+        .light-mode .marriage-item-title {
+          color: #000000 !important; /* Slightly darker lime for readability on white */
+        }
+
+        .light-mode .marriage-item-title:hover {
+          color: #000000 !important;
+        }
+
+        /* Source Items in Marriage View */
+        .light-mode .source-item {
+          background-color: #f4f4f5 !important; /* Zinc-100 */
+          border-color: #e4e4e7 !important;
+        }
+
+        .light-mode .source-item .source-title {
+          color: #18181b !important;
+        }
+
+        .light-mode .marriage-divider {
+          border-color: #e4e4e7 !important;
+        }
+
+        /* Back button text */
+        .light-mode .detail-panel button {
+          color: #71717a !important;
+        }
+
+        .light-mode .detail-panel button:hover {
+          color: #000000 !important;
+        }
+
+        /* --- Add to .light-mode section of App.jsx --- */
+
+/* --- Add to the .light-mode section of App.jsx --- */
+
+/* 1. Contemporary Perspective Box - Hover State */
+.light-mode .contemporary-box {
+  background-color: #f9f9fb !important; 
+  border-color: #e4e4e7 !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.light-mode .contemporary-box:hover {
+  border-color: #a1a1aa !important; /* Subtle darken on hover (Zinc-400) */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03) !important;
+}
+
+/* 2. Scholar Link (The small ExternalLink button) - Base & Hover */
+.light-mode .scholar-link {
+  background-color: #ffffff !important;
+  border-color: #d4d4d8 !important;
+  color: #71717a !important;
+  transition: all 0.2s ease !important;
+}
+
+/* 3. The Specific Green Highlight you asked for */
+.light-mode .scholar-link:hover {
+  background-color: #ccff00 !important;
+  border-color: #ccff00 !important;
+  color: #000000 !important;
+}
+
+/* 4. Ensure the Icon inside the button also turns black on hover */
+.light-mode .scholar-link:hover svg {
+  color: #000000 !important;
+}
+
+/* 5. Supporting Source Cards (The other link boxes) Hover */
+.light-mode .source-card:hover {
+  border-color: #ccff00 !important;
+  background-color: #ffffff !important;
+}
+.light-mode .source-card:hover .source-title {
+  color: #000000 !important;
+}
+.light-mode .source-card:hover svg {
+  color: #ccff00 !important;
+}
+
       `}</style>
 
       <Header navigateTo={navigateTo} />
@@ -132,28 +271,20 @@ export default function App() {
         navigateTo={navigateTo}
       />
 
-      {/* Main Content Area with Transition classes */}
       <main className={`flex-grow relative flex flex-col ${isTransitioning ? 'animate-view-exit' : 'animate-view-snappy'}`}>
-{/* Visual Grid Overlay */}
-<div className="visual-grid absolute inset-0 z-0 pointer-events-none opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)', backgroundSize: '4rem 4rem' }}></div>
+        <div className="visual-grid absolute inset-0 z-0 pointer-events-none opacity-[0.03]" 
+             style={{ backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)', backgroundSize: '4rem 4rem' }}>
+        </div>
 
-        {/* View Routing */}
         {currentView === 'home' && <HeroSection navigateTo={navigateTo} />}
         {currentView === 'directory' && <DirectoryView activeTopic={activeTopic} navigateTo={navigateTo} />}
         {currentView === 'ramadan' && <RamadanView activeTopic={activeTopic} navigateTo={navigateTo} />}
         {currentView === 'marriage' && <MarriageView />}
         {currentView === 'controversies' && <ControversiesView />}
         
-        {/* Animated Footer Views */}
-        {currentView === 'about' && (
+        {(currentView === 'about' || currentView === 'methodology') && (
           <div className="flex-grow flex flex-col">
-            <AboutView navigateTo={navigateTo} />
-          </div>
-        )}
-        
-        {currentView === 'methodology' && (
-          <div className="flex-grow flex flex-col">
-            <MethodologyView navigateTo={navigateTo} />
+            {currentView === 'about' ? <AboutView navigateTo={navigateTo} /> : <MethodologyView navigateTo={navigateTo} />}
           </div>
         )}
       </main>

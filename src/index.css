@@ -3,3 +3,27 @@
 html {
   scroll-behavior: smooth;
 }
+
+@keyframes logo-scan {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+.archive-scan-container {
+  position: relative;
+  overflow: hidden; /* Keeps the scan line inside the logo area */
+}
+
+.archive-scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #ccff00;
+  box-shadow: 0 0 8px #ccff00;
+  animation: logo-scan 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  pointer-events: none;
+  z-index: 10;
+}
