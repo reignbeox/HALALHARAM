@@ -65,9 +65,9 @@ export default function MethodologyView({ navigateTo }) {
         <div className="mt-16 text-center">
           <button 
             onClick={() => navigateTo('home')} 
-            className="btn-dismiss px-6 py-3 border border-zinc-700 text-zinc-500 font-mono text-xs uppercase transition-all bg-zinc-900/50"
+            className="btn-dismiss px-10 py-3 border border-zinc-700 text-zinc-500 font-mono text-xs uppercase hover:text-[#ccff00] hover:border-[#ccff00] transition-colors bg-zinc-900/50"
           >
-            [ DISMISS PROTOCOL ]
+            [ Return to Main ]
           </button>
         </div>
       </div>

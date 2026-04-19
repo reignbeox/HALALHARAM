@@ -271,6 +271,17 @@ export default function App() {
         .light-mode .divider-line {
           border-left-color: #e4e4e7 !important;
         }
+          
+        /* Light Mode Header Polish */
+        .light-mode .header-main {
+          background-color: #ffffff !important;
+          border-bottom-color: #e4e4e7 !important; /* This flips the dark line to light zinc */
+        }
+
+        /* Dark Mode (Default) Header Polish */
+        .header-main {
+          border-bottom-color: #27272a !important; /* zinc-800 equivalent */
+        }
 
         /* --- Add to .light-mode section of App.jsx --- */
 

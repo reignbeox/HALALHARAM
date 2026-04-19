@@ -3,7 +3,7 @@ import { Moon, Star, Menu } from 'lucide-react';
 
 export default function Header({ navigateTo }) {
   return (
-    <header className="header-main border-t-2 border-zinc-800 sticky top-0 z-50 transition-colors duration-300">
+    <header className="header-main border-b-2 border-zinc-800 sticky top-0 z-50 transition-colors duration-300">
       <div className="bg-[#ccff00] text-black font-mono text-[9px] font-black uppercase tracking-[0.2em] px-6 py-1 flex justify-between items-center">
         <span>HALALVERIFY // SYSTEM</span>
         <span className="hidden sm:inline">SECURE CONNECTION</span>
@@ -22,9 +22,9 @@ export default function Header({ navigateTo }) {
                   strokeWidth={0} 
                 />
                 <Star 
-                  size={18} 
+                  size={16} 
                   strokeWidth={0} 
-                  className="star-icon absolute -right-2 -top-2 fill-current transition-transform duration-500 ease-in-out group-hover:rotate-[180deg]" 
+                  className="star-icon absolute -right-0 -top-0 fill-current transition-transform duration-500 ease-in-out group-hover:rotate-[372deg]" 
                 />
               </div>
             </div>
