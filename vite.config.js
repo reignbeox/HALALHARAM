@@ -6,6 +6,8 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
   
   return {
+    // This tells Vite your site is at reignbeox.github.io/HALALHARAM/
+    base: '/HALALHARAM/', 
     plugins: [react()],
     define: {
       // This forces the variable into the global scope of your app
