@@ -38,23 +38,27 @@ export default function DirectoryView({ activeTopic, navigateTo }) {
           {!activeItem ? (
             <>
               <div className="mb-12">
-                <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4">THE LIVING DIRECTORY</h2>
+                <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4">THE DIRECTORY</h2>
                 <p className="font-mono text-zinc-500 uppercase tracking-widest text-sm border-l-4 border-[#ccff00] pl-4">A comprehensive index of modern and traditional rulings.</p>
               </div>
   
               <div className="flex flex-col lg:flex-row gap-12">
                 <div className="flex-grow">
                   <div className="flex flex-wrap gap-2 mb-10 border-b-2 border-zinc-800 pb-8">
-                    {['ALL', 'HALAL', 'MAKRUH / DISPUTED', 'HARAM'].map((filterItem) => (
-                      <button 
-                        key={filterItem}
-                        onClick={() => setDirectoryFilter(filterItem)}
-                        className={`px-5 py-2 font-mono text-xs font-bold uppercase tracking-widest border-2 transition-all ${directoryFilter === filterItem ? 'bg-black text-white border-black' : 'bg-transparent text-zinc-500 border-zinc-800 hover:border-[#ccff00] hover:text-[#ccff00]'}`}
-                      >
-                        {getTabDot(filterItem)}{filterItem}
-                      </button>
-                    ))}
-                  </div>
+  {['ALL', 'HALAL', 'MAKRUH / DISPUTED', 'HARAM'].map((filterItem) => (
+    <button 
+      key={filterItem}
+      onClick={() => setDirectoryFilter(filterItem)}
+      className={`filter-btn px-5 py-2 font-mono text-xs font-bold uppercase tracking-widest border-2 transition-all ${
+        directoryFilter === filterItem 
+          ? 'active bg-black text-white border-black' 
+          : 'bg-transparent text-zinc-500 border-zinc-800 hover:border-[#ccff00] hover:text-[#ccff00]'
+      }`}
+    >
+      {getTabDot(filterItem)}{filterItem}
+    </button>
+  ))}
+</div>
   
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {sortedDirectory.map(item => (

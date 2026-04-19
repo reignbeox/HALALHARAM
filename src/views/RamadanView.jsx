@@ -43,13 +43,21 @@ export default function RamadanView({ activeTopic, navigateTo }) {
                 <p className="font-mono text-zinc-500 uppercase tracking-widest text-sm border-l-4 border-[#ccff00] pl-4">Identify exact parameters of fast invalidation based on classical Fiqh.</p>
               </div>
   
-              <div className="flex flex-wrap gap-2 mb-10 border-b-2 border-zinc-800 pb-8">
-                {['ALL', 'DOES NOT BREAK', 'DISPUTED / MAKRUH', 'BREAKS FAST'].map((filterItem) => (
-                  <button key={filterItem} onClick={() => setRamadanFilter(filterItem)} className={`px-5 py-2 font-mono text-xs font-bold uppercase tracking-widest border-2 transition-all ${ramadanFilter === filterItem ? 'bg-white text-black border-white' : 'bg-transparent text-zinc-500 border-zinc-800 hover:border-[#ccff00] hover:text-[#ccff00]'}`}>
-                    {getTabDot(filterItem)}{filterItem}
-                  </button>
-                ))}
-              </div>
+<div className="flex flex-wrap gap-2 mb-10 border-b-2 border-zinc-800 pb-8">
+  {['ALL', 'DOES NOT BREAK', 'DISPUTED / MAKRUH', 'BREAKS FAST'].map((filterItem) => (
+    <button 
+      key={filterItem} 
+      onClick={() => setRamadanFilter(filterItem)} 
+      className={`filter-btn px-5 py-2 font-mono text-xs font-bold uppercase tracking-widest border-2 transition-all ${
+        ramadanFilter === filterItem 
+          ? 'active bg-white text-black border-white' 
+          : 'bg-transparent text-zinc-500 border-zinc-800 hover:border-[#ccff00] hover:text-[#ccff00]'
+      }`}
+    >
+      {getTabDot(filterItem)}{filterItem}
+    </button>
+  ))}
+</div>
   
               {sortedData.length === 0 ? (
                 <div className="py-20 text-center border border-zinc-800 font-mono text-zinc-500 uppercase tracking-widest">[ NO RECORDS FOUND FOR THIS FILTER ]</div>

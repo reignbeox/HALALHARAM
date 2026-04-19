@@ -75,9 +75,9 @@ export default function App() {
         .light-mode .moon-icon, .light-mode .star-icon { color: #000000 !important; fill: #000000 !important; }
 
         /* --- Add to the Default (Dark) section of App.jsx --- */
-header.header-main {
-  background-color: #050505 !important;
-}
+        header.header-main {
+          background-color: #050505 !important;
+        }
 
         /* Directory UI Elements */
         .light-mode .btn-return { background-color: #f4f4f5 !important; border-color: #d4d4d8 !important; color: #18181b !important; }
@@ -208,6 +208,68 @@ header.header-main {
 
         .light-mode .detail-panel button:hover {
           color: #000000 !important;
+        }
+
+        /* --- Add to the .light-mode section of App.jsx --- */
+
+        /* 1. The Active Filter Button in Light Mode */
+        .light-mode .filter-btn.active {
+          background-color: #ffffff !important; /* Turns Lime when selected */
+          color: #000000 !important;           /* Black text */
+          border-color: #ccff00 !important;
+        }
+
+        .light-mode .filter-btn.active {
+          background-color: #ffffff !important; 
+          color: #000000 !important;           
+          border-color: #ccff00 !important;
+        }
+
+
+        /* 2. The Inactive Filter Buttons border color */
+        .light-mode .filter-btn:not(.active) {
+          border-color: #e4e4e7 !important;     /* Light zinc border */
+          color: #71717a !important;            /* Zinc-500 text */
+        }
+
+        /* 3. Hover state for inactive buttons in Light Mode */
+        .light-mode .filter-btn:not(.active):hover {
+          border-color: #ccff00 !important;
+          color: #000000 !important;
+          background-color: transparent !important;
+        }
+
+        /* --- Add to .light-mode section of App.jsx --- */
+
+        /* 1. Methodology Background Fix */
+        .light-mode .methodology-section {
+          background-color: #fafafa !important;
+        }
+
+        /* 2. Source Hierarchy Items (The Black Boxes) */
+        .light-mode .hierarchy-item {
+          background-color: #f4f4f5 !important; /* Zinc-100 */
+          border-color: #e4e4e7 !important;     /* Zinc-200 */
+          color: #18181b !important;            /* Black text */
+        }
+
+        /* 3. Dismiss Protocol Button */
+        .light-mode .btn-dismiss {
+          background-color: #f4f4f5 !important;
+          border-color: #d4d4d8 !important; /* Zinc-300 frame */
+          color: #71717a !important;        /* Zinc-500 text */
+        }
+
+        .light-mode .btn-dismiss:hover {
+          background-color: #ccff00 !important;
+          border-color: #ccff00 !important;
+          color: #000000 !important;
+          box-shadow: 0 0 15px rgba(204, 255, 0, 0.2);
+        }
+
+        /* 4. Vertical divider lines in Methodology */
+        .light-mode .divider-line {
+          border-left-color: #e4e4e7 !important;
         }
 
         /* --- Add to .light-mode section of App.jsx --- */
