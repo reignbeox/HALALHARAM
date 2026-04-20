@@ -354,6 +354,75 @@ export const MARRIAGE_DATA = {
 };
 
 export const CONTROVERSIES_DATA = [
+    {
+      topic: "Hitting Wives",
+      claim: '"The Quran allows hitting wives (4:34)."',
+      context: 'Context: Modern scholarship and Prophetic Hadith clarify this as a "symbolic tap" with a miswak (toothbrush) that leaves no mark, used only as a last resort.',
+      elaboration: "The verse outlines a step-by-step process for severe marital rebellion (Nushuz). The Prophet Muhammad explicitly restricted the final step to a symbolic tap that 'leaves no mark' (Darban Ghayra Mubarrih). According to the authoritative commentary of Ibn Abbas, the Prophet’s companion, this is understood as being done with a miswak (a small twig used as a toothbrush) to convey a psychological message rather than physical pain. The Prophet Muhammad never struck a woman in his life and stated: 'The best of you are those who are best to their wives.'",
+      sources: [
+        { title: "Quran 4:34", author: "Surah An-Nisa", link: "https://quran.com/4/34" },
+      ],
+      contemporaryScholars: [
+        {
+          name: "Dr. Yasir Qadhi",
+          opinion: "The Prophet never hit a woman, and his restriction of the 'tap' to a miswak effectively makes it a symbolic gesture of frustration rather than a physical assault.",
+          source: { title: "Explanation of Surah An-Nisa", link: "https://www.youtube.com/results?search_query=yasir+qadhi+hitting+wives" }
+        },
+        {
+        name: "Sheikh Assim Al-Hakeem",
+        opinion: "This final resort is a sentimental reprimand, not a physical one, meant to open a spouse's eyes to the severity of their actions. Following the Prophet's restriction, it must be done with a miswak twig, avoiding the face and leaving no mark, bone fracture, or blood.",
+        source: { title: "Counseling on Surah An-Nisa", author: "Sheikh Assim Al-Hakeem", link: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID" }
+        },
+        {
+        name: "Dr. Zakir Naik",
+        opinion: "The Arabic word 'Dharaba' means beat her lightly as a last resort and ultimatum. It is a symbolic beating—in today’s age, like using a handkerchief—which surely will not hurt, must not be on the face, and must not leave a mark.",
+        source: { title: "Response to Allegations on Wife Beating", author: "Dr. Zakir Naik", link: "https://www.youtube.com/shorts/w_hm6adoTxM"}
+        },
+        {
+        name: "Mohammed Hijab",
+        opinion: "The verse is not telling a man how to 'beat up' his wife, but rather providing a framework to de-escalate potential conflict. Because men are biologically more prone to aggressive behavior, these three steps act as a 'cap' or refinement of that default position. It serves as a physical recourse for extreme situations—such as self-defense or protecting a child—where even modern norms recognize the necessity of intervention.",
+        source: { title: "The 'Wife Beating' verse explained", author: "Mohammed Hijab", link: "https://www.youtube.com/watch?v=6DcF4F4US8Q" }
+        },
+        {
+        name: "Dr. Jamal Badawi",
+        opinion: "The tap with a miswak is a symbolic gesture aimed at psychological correction during a breakdown in the marital relationship. It is legally restricted to be painless and leave no mark, serving as a 'last resort' warning before the relationship is terminated.",
+        source: { title: "Gender Equity in Islam", author: "Dr. Jamal Badawi", link: "https://www.islamland.com/uploads/books/The-Status-of-Women-in-Islam-Jamal-Badawi-_eng.pdf" }
+        }
+
+      ]
+  },
+  {
+      topic: "Aisha's Age",
+      claim: '"The Prophet Muhammad married Aisha when she was 6 and consummated at 9."',
+      context: "Context: While the primary Hadith narrations mention these ages, contemporary and classical scholars analyze this through historical context, social norms of the 7th century, and alternative chronological calculations.",
+      elaboration: "Primary narrations in Sahih Bukhari and Muslim state Aisha was married at 6 and the marriage was consummated at 9. Scholars emphasize three main points: First, 7th-century biological maturity was the standard for adulthood across cultures. Second, Aisha is recorded as being a highly intelligent, proactive leader and a primary source of Islamic law, suggesting she was considered a mature individual by her society. Third, some modern researchers argue for a higher age based on the age of her sister Asma and the timeline of the Hijrah, though the age of 9 remains the most widely cited in traditional texts.",
+      sources: [
+        { title: "Sahih al-Bukhari 5134", author: "Imam Bukhari", link: "https://sunnah.com/bukhari:5134" },
+        { title: "Sahih Muslim 1422", author: "Imam Muslim", link: "https://sunnah.com/muslim:1422" }
+      ],
+      contemporaryScholars: [
+        {
+          name: "Sheikh Assim Al-Hakeem",
+          opinion: "We do not apologize for the texts. At that time, in that environment, girls matured much faster than in the modern West. It was a normal, legal marriage at the time, and Aisha was exceptionally happy and intellectually developed, eventually becoming one of the greatest scholars of Islam.",
+          source: { title: "Counseling on Surah An-Nisa", author: "Sheikh Assim Al-Hakeem" }
+        },
+        {
+          name: "Dr. Omar Suleiman",
+          opinion: "The marriage of Aisha must be understood within the socio-historical framework of the time where maturity was the marker for adulthood, not a modern chronological number. Aisha's own narrations depict a marriage of deep intellectual companionship and love, and her later role as a premiere jurist proves she was a fully developed and empowered individual.",
+          source: { title: "Aisha: The Mother of the Believers", author: "Dr. Omar Suleiman", link: "https://www.youtube.com/watch?v=5gDTh-6X9vo" }
+        },
+        {
+          name: "Dr. Jamal Badawi",
+          opinion: "In the 7th century, the 'age of majority' was determined by physical and mental maturity, not a specific number. Aisha was already engaged to someone else before the Prophet, showing she was already considered eligible for marriage by her society's standards.",
+          source: { title: "The Status of Women in Islam", author: "Dr. Jamal Badawi", link: "https://www.islamland.com/uploads/books/The-Status-of-Women-in-Islam-Jamal-Badawi-_eng.pdf" }
+        },
+        {
+          name: "Dr. Zakir Naik",
+          opinion: "Marriage at that time was based on puberty and maturity. History shows no contemporary critics—not even the enemies of the Prophet—objected to the age, because it was the absolute global norm 1400 years ago. One cannot judge 7th-century morality by 21st-century socially constructed age limits.",
+          source: { title: "Response to Allegations on Wife Beating", author: "Dr. Zakir Naik" }
+        }
+      ]
+    },
   {
     topic: "Inheritance Laws",
     claim: '"Women get half of what men get."',
@@ -398,17 +467,6 @@ export const CONTROVERSIES_DATA = [
     sources: [
       { title: "Quran 18:86", author: "Surah Al-Kahf", link: "https://quran.com/18/86" },
       { title: "Tafsir Al-Razi", author: "Fakhr al-Din al-Razi" }
-    ],
-    contemporaryScholars: [] 
-  },
-  {
-    topic: "Gender Roles",
-    claim: '"The Quran allows hitting wives (4:34)."',
-    context: 'Context: Modern scholarship and Prophetic Hadith clarify this as a "symbolic tap" with a miswak (toothbrush) that leaves no mark, used only as a last resort.',
-    elaboration: "The verse outlines a step-by-step process for severe marital rebellion (Nushuz). If taken literally as 'strike', the Prophet Muhammad explicitly restricted it to a symbolic tap that 'leaves no mark' (using a miswak) solely to convey the severity of the breaking point. The Prophet strongly condemned hitting women and never struck a woman in his life.",
-    sources: [
-      { title: "Quran 4:34", author: "Surah An-Nisa", link: "https://quran.com/4/34" },
-      { title: "Women in Islamic Law", author: "Dr. Jamal Badawi" }
     ],
     contemporaryScholars: [] 
   }
