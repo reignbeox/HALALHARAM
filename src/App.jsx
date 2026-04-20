@@ -283,6 +283,17 @@ export default function App() {
           border-bottom-color: #27272a !important; /* zinc-800 equivalent */
         }
 
+        /* Ensure this targets your Light Mode class specifically */
+.light-mode .query-form:focus-within {
+  border-color: #ccff00 !important;
+}
+
+/* This fixes the internal vertical lines */
+.light-mode .query-form:focus-within div,
+.light-mode .query-form:focus-within button {
+  border-color: #ccff00 !important;
+}
+
         /* --- Add to .light-mode section of App.jsx --- */
 
 /* --- Add to the .light-mode section of App.jsx --- */

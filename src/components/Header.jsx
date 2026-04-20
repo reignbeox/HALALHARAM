@@ -1,5 +1,6 @@
 import React from 'react';
-import { Moon, Star, Menu } from 'lucide-react';
+import { IconMoon } from '@tabler/icons-react'; // Swapped to Tabler
+import { Star, Menu } from 'lucide-react'; // Keeping Lucide for Star/Menu or swap those too
 
 export default function Header({ navigateTo }) {
   return (
@@ -17,14 +18,15 @@ export default function Header({ navigateTo }) {
           <div className="flex items-center gap-1">
             <div className="relative flex items-center justify-center w-10 h-10 transition-colors duration-200">
               <div className="relative w-8 h-8 transition-transform duration-300 group-hover:rotate-[-12deg]">
-                <Moon 
+                {/* Tabler Moon Icon */}
+                <IconMoon 
                   className="moon-icon w-8 h-8 fill-current" 
-                  strokeWidth={0} 
+                  strokeWidth={2} // Tabler looks better with a slight stroke or keep 0 for solid fill
                 />
                 <Star 
                   size={16} 
                   strokeWidth={0} 
-                  className="star-icon absolute -right-0 -top-0 fill-current transition-transform duration-500 ease-in-out group-hover:rotate-[372deg]" 
+                  className="star-icon absolute -right-0 top-0.5 fill-current transition-transform duration-500 ease-in-out group-hover:rotate-[372deg]" 
                 />
               </div>
             </div>

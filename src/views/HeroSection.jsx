@@ -113,10 +113,10 @@ const handleAiQuerySubmit = async (e) => {
 
 {/* QUERY FORM */}
 <form onSubmit={handleAiQuerySubmit} className="query-form relative max-w-3xl mx-auto mb-6 group flex border-2 border-zinc-700 focus-within:border-[#ccff00] transition-all bg-[#ffffff]">
-  <div className="bg-[#ccff00] px-4 flex items-center justify-center text-[#000000] border-r-2 border-zinc-700 group-focus-within:border-[#ccff00]">
-    {/* Swapped to MoonStar */}
-    <MoonStar className="h-5 w-5 stroke-[2.5px]" /> 
-  </div>
+{/* Icon Container inside HeroSection.jsx */}
+<div className="bg-[#ccff00] px-4 flex items-center justify-center text-[#000000] border-r-2 border-zinc-700 group-focus-within:border-r-[#ccff00] transition-colors duration-200">
+  <MoonStar className="h-5 w-5 stroke-[2.5px]" /> 
+</div>
   <input
     type="text"
     className="block w-full px-6 py-5 md:py-6 bg-transparent text-[#000000] text-lg font-mono placeholder-zinc-500 focus:outline-none uppercase font-bold"
