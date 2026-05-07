@@ -211,7 +211,7 @@ export const RAMADAN_DATABASE = [
     coreReasoning: "Natural swallowing of one's own saliva is unavoidable and perfectly permissible. It does not constitute eating or drinking.",
     schoolsOfThought: [{ school: "Absolute Consensus", ruling: "Does Not Break" }],
     sources: [{ title: "Fiqh of Fasting", author: "Al-Mughni" }],
-    differingOpinions: "None, unless the saliva is mixed with external blood (e.g., from gums) or leftover food particles, in which case swallowing it deliberately breaks the fast."
+    differingOpinions: "None, unless the saliva is mixed with external blood or food particles, in which case swallowing it deliberately breaks the fast."
   },
   { 
     id: 'r2', topic: "Intentional Eating/Drinking", status: "BREAKS FAST", consensusLevel: "Absolute", category: "Dietary",
@@ -225,56 +225,203 @@ export const RAMADAN_DATABASE = [
     coreReasoning: "If someone genuinely forgets they are fasting and eats, their fast remains valid as it is considered a provision from Allah. They must stop immediately upon remembering.",
     schoolsOfThought: [{ school: "Majority (Hanafi, Shafi'i, Hanbali)", ruling: "Does Not Break" }, { school: "Maliki", ruling: "Breaks (Requires Makeup)" }],
     sources: [{ title: "Hadith on Forgetful Eating", author: "Sahih Bukhari" }],
-    differingOpinions: "The Maliki school holds that while there is no sin in forgetful eating, the fast itself is technically invalidated and must be made up later."
+    differingOpinions: "The Maliki school holds that the fast itself is technically invalidated and must be made up, even if there is no sin."
   },
   { 
     id: 'r4', topic: "Vomiting Unintentionally", status: "DOES NOT BREAK", consensusLevel: "Absolute", category: "Medical/Illness",
-    coreReasoning: "Sudden, uncontrollable vomiting does not break the fast. Intentional vomiting (inducing it), however, does break it.",
+    coreReasoning: "Sudden, uncontrollable vomiting does not break the fast. Intentional vomiting, however, does break it.",
     schoolsOfThought: [{ school: "Absolute Consensus", ruling: "Does Not Break" }],
     sources: [{ title: "Hadith on Vomiting", author: "Sunan Abi Dawud" }],
     differingOpinions: null
   },
   { 
-    id: 'r5', topic: "Taking Injections (Non-Nutritional)", status: "DOES NOT BREAK", consensusLevel: "High", category: "Medical",
-    coreReasoning: "Vaccines, anesthetics, or medical injections (like penicillin) that do not provide nutrition or hydration are permitted as they do not enter the open body cavities in the manner of food.",
+    id: 'r5', topic: "Medical Injections (Non-Nutritional)", status: "DOES NOT BREAK", consensusLevel: "High", category: "Medical",
+    coreReasoning: "Vaccines, anesthetics, insulin, or penicillin that do not provide nutrition are permitted as they do not enter open body cavities like food.",
     schoolsOfThought: [{ school: "Contemporary Consensus", ruling: "Does Not Break" }],
     sources: [{ title: "Medical Rulings on Fasting", author: "Islamic Fiqh Academy" }],
-    differingOpinions: null
+    differingOpinions: "Only nutritional drips (glucose/saline) are prohibited."
   },
   { 
     id: 'r6', topic: "IV Drips / Nutritional Injections", status: "BREAKS FAST", consensusLevel: "High", category: "Medical",
-    coreReasoning: "Receiving vitamins, saline, or sustenance intravenously defeats the purpose of the fast as it directly nourishes the body.",
+    coreReasoning: "Receiving vitamins, saline, or sustenance intravenously directly nourishes the body, defeating the purpose of the fast.",
     schoolsOfThought: [{ school: "Contemporary Consensus", ruling: "Breaks Fast" }],
     sources: [{ title: "Fatwa on IV Drips", author: "Dar al-Ifta" }],
     differingOpinions: null
   },
   { 
     id: 'r7', topic: "Smoking / Vaping", status: "BREAKS FAST", consensusLevel: "Absolute", category: "Lifestyle",
-    coreReasoning: "Inhaling smoke or vapor intentionally introduces physical substances (particulate matter) directly into the body cavity, satisfying a physical urge.",
+    coreReasoning: "Inhaling smoke or vapor introduces physical particulate matter directly into the body cavity.",
     schoolsOfThought: [{ school: "Absolute Consensus", ruling: "Breaks Fast" }],
     sources: [{ title: "Fasting & Smoking", author: "AMJA" }],
     differingOpinions: null
   },
   { 
     id: 'r8', topic: "Using Asthma Inhalers", status: "DISPUTED", consensusLevel: "Low", category: "Medical",
-    coreReasoning: "Scholars differ based on the mechanics. Some view it as compressed air/medicine that opens the lungs (Does Not Break), while others argue liquid/powder particles inevitably enter the stomach (Breaks).",
-    schoolsOfThought: [{ school: "Many Modern Scholars", ruling: "Does Not Break" }, { school: "Traditional Cautious View", ruling: "Breaks Fast" }],
+    coreReasoning: "Difference depends on mechanics: some view it as gas opening lungs (Valid), others argue liquid particles reach the stomach (Breaks).",
+    schoolsOfThought: [{ school: "Modern Majority", ruling: "Does Not Break" }, { school: "Traditional View", ruling: "Breaks Fast" }],
     sources: [{ title: "Asthma & Fasting", author: "IslamQA" }],
-    differingOpinions: "Those who permit it equate the microscopic particles to the residual water left in the mouth after Wudu (ablution), which is unavoidable and pardoned."
+    differingOpinions: "Permissiveness often equates the particles to residual water left in the mouth after Wudu."
   },
   { 
     id: 'r9', topic: "Brushing Teeth (Toothpaste)", status: "MAKRUH", consensusLevel: "Moderate", category: "Hygiene",
-    coreReasoning: "Technically permissible if nothing is swallowed, but highly disliked (Makruh) due to the strong flavor and severe risk of accidentally swallowing the paste.",
+    coreReasoning: "Permissible if nothing is swallowed, but disliked (Makruh) due to the risk of accidental intake.",
     schoolsOfThought: [{ school: "Majority", ruling: "Makruh (Disliked)" }],
     sources: [{ title: "Use of Miswak & Paste", author: "SeekersGuidance" }],
-    differingOpinions: "It is universally recommended to use a plain Miswak during fasting hours and save toothpaste for before Fajr or after Maghrib."
+    differingOpinions: "Recommended to use plain Miswak during fasting and save paste for night hours."
   },
   { 
-    id: 'r10', topic: "Blood Testing / Cupping (Hijama)", status: "DISPUTED", consensusLevel: "Moderate", category: "Medical",
-    coreReasoning: "Extracting a small amount of blood for tests is generally fine. Cupping is disputed; it is historically disliked because it severely weakens the fasting person.",
-    schoolsOfThought: [{ school: "Hanbali", ruling: "Breaks Fast" }, { school: "Majority (Hanafi/Shafi'i/Maliki)", ruling: "Makruh (Does Not Break)" }],
+    id: 'r10', topic: "Blood Withdrawal (Tests/Donation/Hijama)", status: "DISPUTED", consensusLevel: "Moderate", category: "Medical",
+    coreReasoning: "The exit of blood generally does not break the fast. However, it is disliked if it induces severe weakness.",
+    schoolsOfThought: [{ school: "Majority", ruling: "Does Not Break" }, { school: "Hanbali", ruling: "Cupping (Hijama) Breaks Fast" }],
     sources: [{ title: "Hadith on Cupper and Cupped", author: "Sunan an-Nasa'i" }],
-    differingOpinions: "The Hanbali school strictly considers cupping a fast-breaker based on specific Hadith, whereas the majority interpret those Hadith as a warning about the weakness it induces rather than an outright invalidation."
+    differingOpinions: "The Hanbali school strictly considers cupping a fast-breaker based on specific narrations."
+  },
+  { 
+    id: 'r11', topic: "Using Eye/Ear Drops", status: "DOES NOT BREAK", consensusLevel: "High", category: "Medical",
+    coreReasoning: "The eye and ear are not considered open pathways to the stomach. Negligible taste in the throat is ignored.",
+    schoolsOfThought: [{ school: "Majority", ruling: "Does Not Break" }],
+    sources: [{ title: "Fatawa al-Lajnah ad-Daimah", author: "Saudi Council" }],
+    differingOpinions: "Older Maliki/Hanafi texts were more cautious if taste was felt, but modern medicine clarifies anatomy."
+  },
+  { 
+    id: 'r12', topic: "Nasal Drops/Sprays", status: "BREAKS FAST", consensusLevel: "Moderate", category: "Medical",
+    coreReasoning: "The nose is a direct pathway to the throat and stomach. Prophet (pbuh) warned against thorough sniffing during Wudu while fasting.",
+    schoolsOfThought: [{ school: "Majority Consensus", ruling: "Breaks Fast" }],
+    sources: [{ title: "Bulugh al-Maram", author: "Ibn Hajar" }],
+    differingOpinions: "Only permissible if it is strictly a dry spray that does not reach the throat, though this is rare."
+  },
+  { 
+    id: 'r13', topic: "Applying Perfume / Oud", status: "DOES NOT BREAK", consensusLevel: "Absolute", category: "Personal Care",
+    coreReasoning: "Smelling scents does not introduce a physical body into the stomach. Avoid inhaling heavy incense smoke directly.",
+    schoolsOfThought: [{ school: "Absolute Consensus", ruling: "Does Not Break" }],
+    sources: [{ title: "Rulings on Fasting", author: "Ibn Uthaymeen" }],
+    differingOpinions: null
+  },
+  { 
+    id: 'r14', topic: "Rinsing Mouth / Wudu", status: "DOES NOT BREAK", consensusLevel: "Absolute", category: "Hygiene",
+    coreReasoning: "Rinsing is required for Wudu. Accidental swallowing is pardoned as intent was missing. Excessive gurgling is discouraged.",
+    schoolsOfThought: [{ school: "Absolute Consensus", ruling: "Does Not Break" }],
+    sources: [{ title: "Al-Muwatta", author: "Imam Malik" }],
+    differingOpinions: "The Maliki school holds that even accidental intake during Wudu requires a makeup (Qada)."
+  },
+  { 
+    id: 'r15', topic: "Applying Makeup / Skin Cream", status: "DOES NOT BREAK", consensusLevel: "High", category: "Personal Care",
+    coreReasoning: "Absorption through pores (including nicotine patches) does not enter via an open cavity to the stomach.",
+    schoolsOfThought: [{ school: "Contemporary Consensus", ruling: "Does Not Break" }],
+    sources: [{ title: "Modern Fiqh Issues", author: "Wahbah al-Zuhayli" }],
+    differingOpinions: null
+  },
+  { 
+    id: 'r16', topic: "Bleeding Gums", status: "DOES NOT BREAK", consensusLevel: "High", category: "Natural Actions",
+    coreReasoning: "Spontaneous bleeding is pardoned. Deliberately swallowing the blood invalidates the fast.",
+    schoolsOfThought: [{ school: "Majority Consensus", ruling: "Does Not Break" }],
+    sources: [{ title: "Fatawa Islamiyyah", author: "Ibn Baz" }],
+    differingOpinions: "If blood overwhelms the saliva, it must be spat out."
+  },
+  { 
+    id: 'r17', topic: "Tasting Food (Cooking)", status: "MAKRUH", consensusLevel: "Moderate", category: "Dietary",
+    coreReasoning: "Permissible to check seasoning with the tongue if nothing is swallowed. Disliked without reason.",
+    schoolsOfThought: [{ school: "Majority", ruling: "Permissible with Caution" }],
+    sources: [{ title: "Tafsir of Ibn Abbas", author: "Ibn Abbas" }],
+    differingOpinions: null
+  },
+  { 
+    id: 'r18', topic: "Using Oxygen Tanks", status: "DOES NOT BREAK", consensusLevel: "High", category: "Medical",
+    coreReasoning: "Pure oxygen is air and contains no nutritional particles or liquids.",
+    schoolsOfThought: [{ school: "Contemporary Consensus", ruling: "Does Not Break" }],
+    sources: [{ title: "Permanent Committee Ifta", author: "General Secretariat" }],
+    differingOpinions: null
+  },
+  { 
+    id: 'r19', topic: "Swimming / Bathing", status: "DOES NOT BREAK", consensusLevel: "High", category: "Hygiene",
+    coreReasoning: "Submerging the body is permissible. Fast only breaks if water enters via mouth/nose and reaches the stomach.",
+    schoolsOfThought: [{ school: "Majority Consensus", ruling: "Does Not Break" }],
+    sources: [{ title: "Sunan al-Kubra", author: "Al-Bayhaqi" }],
+    differingOpinions: "Diving without equipment is discouraged due to risk of intake."
+  },
+  { 
+    id: 'r20', topic: "Endoscopy (Stomach)", status: "DISPUTED", consensusLevel: "Low", category: "Medical",
+    coreReasoning: "Entry of an object without nutritional fluids is debated. Some say any object breaks it; others say only nutrition matters.",
+    schoolsOfThought: [{ school: "Classical Schools", ruling: "Breaks Fast" }, { school: "Contemporary View", ruling: "Does Not Break" }],
+    sources: [{ title: "Journal of Islamic Fiqh Academy", author: "IFA-OIC" }],
+    differingOpinions: null
+  },
+  { 
+    id: 'r21', topic: "Dental Fillings / Extraction", status: "DOES NOT BREAK", consensusLevel: "High", category: "Medical",
+    coreReasoning: "Teeth treatment is permissible as long as blood and dental materials are not swallowed.",
+    schoolsOfThought: [{ school: "Contemporary Consensus", ruling: "Does Not Break" }],
+    sources: [{ title: "Fatawa on Medical Issues", author: "Ibn Baz" }],
+    differingOpinions: null
+  },
+  { 
+    id: 'r22', topic: "Inhaling Dust / Smoke", status: "DOES NOT BREAK", consensusLevel: "Absolute", category: "Accidental",
+    coreReasoning: "Unavoidable airborne particles (flour, dust, smoke) entering the throat are pardoned.",
+    schoolsOfThought: [{ school: "Absolute Consensus", ruling: "Does Not Break" }],
+    sources: [{ title: "Al-Jami' li Ahkam al-Quran", author: "Al-Qurtubi" }],
+    differingOpinions: null
+  },
+  { 
+    id: 'r23', topic: "Suppositories / Enemas", status: "DISPUTED", consensusLevel: "Low", category: "Medical",
+    coreReasoning: "Modernists argue only the digestive tract (mouth/nose) matters; traditionalists view any lower cavity entry as a breaker.",
+    schoolsOfThought: [{ school: "Traditional Schools", ruling: "Breaks Fast" }, { school: "Modernists", ruling: "Does Not Break" }],
+    sources: [{ title: "Majmu’ al-Fatawa", author: "Ibn Taymiyyah" }],
+    differingOpinions: null
+  },
+  { 
+    id: 'r24', topic: "Applying Henna / Hair Dye", status: "DOES NOT BREAK", consensusLevel: "Absolute", category: "Personal Care",
+    coreReasoning: "External applications are not eating or drinking and do not enter the stomach.",
+    schoolsOfThought: [{ school: "Absolute Consensus", ruling: "Does Not Break" }],
+    sources: [{ title: "Fatawa", author: "Al-Albani" }],
+    differingOpinions: null
+  },
+  { 
+    id: 'r25', topic: "Using Mouthwash", status: "MAKRUH", consensusLevel: "Moderate", category: "Hygiene",
+    coreReasoning: "Permissible if not swallowed, but extremely high risk makes it disliked.",
+    schoolsOfThought: [{ school: "Majority", ruling: "Makruh (Disliked)" }],
+    sources: [{ title: "Contemporary Fatawa", author: "Taqi Usmani" }],
+    differingOpinions: null
+  },
+  { 
+    id: 'r26', topic: "Wet Dreams (Nocturnal Emission)", status: "DOES NOT BREAK", consensusLevel: "Absolute", category: "Natural Actions",
+    coreReasoning: "Since the act is involuntary and occurs during sleep, the fast remains valid.",
+    schoolsOfThought: [{ school: "Absolute Consensus", ruling: "Does Not Break" }],
+    sources: [{ title: "Sahih Muslim 1103", author: "Imam Muslim" }],
+    differingOpinions: null
+  },
+  { 
+    id: 'r27', topic: "Nitroglycerin Tablets (Heart)", status: "BREAKS FAST", consensusLevel: "Moderate", category: "Medical",
+    coreReasoning: "Sublingual tablets dissolve and residue is inevitably swallowed into the throat.",
+    schoolsOfThought: [{ school: "Modern Majority", ruling: "Breaks Fast" }],
+    sources: [{ title: "Fiqh of Fasting", author: "Qaradawi" }],
+    differingOpinions: null
+  },
+  { 
+    id: 'r28', topic: "General Rule: Necessity (Darurah)", status: "CORE PRINCIPLE", consensusLevel: "Absolute", category: "Medical",
+    coreReasoning: "Islam prioritizes life. If medication is needed for health, it is obligatory to break the fast and makeup later.",
+    schoolsOfThought: [{ school: "Absolute Consensus", ruling: "Health takes precedence" }],
+    sources: [{ title: "Quran 2:185", author: "Surah Al-Baqarah" }],
+    differingOpinions: null
+  },
+  { 
+    id: 'r29', topic: "Sexual Intercourse", status: "BREAKS FAST", consensusLevel: "Absolute", category: "Legal/Social",
+    coreReasoning: "Invalidates fast immediately and carries the penalty of Kaffarah (expiation).",
+    schoolsOfThought: [{ school: "Absolute Consensus", ruling: "Breaks Fast + Kaffarah" }],
+    sources: [{ title: "Quran 2:187", author: "Surah Al-Baqarah" }],
+    differingOpinions: "Expiation is fasting 60 consecutive days or feeding 60 needy people."
+  },
+  { 
+    id: 'r30', topic: "Intentional Vomiting", status: "BREAKS FAST", consensusLevel: "High", category: "Medical/Illness",
+    coreReasoning: "Deliberately inducing vomiting nullifies the fast.",
+    schoolsOfThought: [{ school: "Majority Consensus", ruling: "Breaks Fast" }],
+    sources: [{ title: "Hadith", author: "Sunan al-Tirmidhi" }],
+    differingOpinions: null
+  },
+  { 
+    id: 'r31', topic: "Menstruation / Postpartum Bleeding", status: "BREAKS FAST", consensusLevel: "Absolute", category: "Biological",
+    coreReasoning: "Onset of bleeding immediately invalidates fast; it is forbidden to continue. Makeup is required.",
+    schoolsOfThought: [{ school: "Absolute Consensus", ruling: "Breaks Fast (Makeup Required)" }],
+    sources: [{ title: "Sahih Bukhari 304", author: "Imam Bukhari" }],
+    differingOpinions: "Missed fasts must be made up; missed prayers are pardoned."
   },
 ];
 
