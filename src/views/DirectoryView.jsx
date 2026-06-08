@@ -7,11 +7,21 @@ export default function DirectoryView({ activeTopic, navigateTo }) {
     const [directoryFilter, setDirectoryFilter] = useState("ALL");
     const [expandedDiffering, setExpandedDiffering] = useState({});
   
-    const directoryData = DATABASE.filter(item => {
-      const isDisputedOrMakruh = item.status.toUpperCase() === 'MAKRUH' || item.status.toUpperCase() === 'DISPUTED';
-      return directoryFilter === "ALL" || 
-             item.status.toUpperCase() === directoryFilter || 
-             (directoryFilter === "MAKRUH / DISPUTED" && isDisputedOrMakruh);
+const directoryData = DATABASE.filter(item => {
+        const itemStatusClean = item.status.toUpperCase();
+        
+        // 💡 THE FIX: Use .includes() to catch compound statuses
+        const isMakruh = itemStatusClean.includes('MAKRUH');
+        const isDisputed = itemStatusClean.includes('DISPUTED');
+        const isHalal = itemStatusClean.includes('HALAL');
+        const isHaram = itemStatusClean.includes('HARAM');
+
+        if (directoryFilter === "ALL") return true;
+        if (directoryFilter === "HALAL") return isHalal;
+        if (directoryFilter === "HARAM") return isHaram;
+        if (directoryFilter === "MAKRUH / DISPUTED") return isMakruh || isDisputed;
+        
+        return false;
     });
   
     const getStatusWeight = (status) => {

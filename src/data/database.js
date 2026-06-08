@@ -4,13 +4,6 @@
 
 export const HALAL_DATA = [
   {
-    id: 'h1', topic: "All Seafood", category: "Food, Dietary", status: "Halal", consensusLevel: "High",
-    coreReasoning: '"Lawful to you is the game of the sea" (5:96).',
-    schoolsOfThought: [{ school: "Majority", ruling: "Permitted" }, { school: "Hanafi", ruling: "Restricted to fish-types only" }],
-    sources: [{ title: "Quran 5:96", author: "Surah Al-Ma'idah", link: "https://quran.com/5/96" }],
-    differingOpinions: "Hanafi school historically restricts seafood to fish, viewing crustaceans as Makruh.", isNew: false
-  },
-  {
     id: 'h2', topic: "Zabihah Poultry/Beef", category: "Food, Meat", status: "Halal", consensusLevel: "High",
     coreReasoning: "Must be slaughtered by a Muslim or Ahlul Kitab according to Islamic rites.",
     schoolsOfThought: [{ school: "Consensus", ruling: "Permitted" }],
@@ -65,7 +58,26 @@ export const HALAL_DATA = [
     coreReasoning: "Highly encouraged as it aligns with the Quranic concept of Tayyib (Pure, wholesome, and ethical).",
     schoolsOfThought: [{ school: "Consensus", ruling: "Mustahabb (Recommended)" }],
     sources: [{ title: "Quran 2:168", author: "Halalan Tayyiban", link: "https://quran.com/2/168" }], differingOpinions: null, isNew: false
-  }
+  },
+  {
+    id: 'h15', topic: "Metaverse Interactions & Commerce", category: "Tech, Ethics", status: "Halal", consensusLevel: "High",
+    coreReasoning: "Permissible as a tool for education, business, and social interaction, provided it mirrors real-world Shariah ethics (modesty, honesty).",
+    schoolsOfThought: [{ school: "Contemporary Scholars", ruling: "Permitted with ethical safeguards" }],
+    sources: [{ title: "Halal Market Trends 2026", author: "Halal Practitioner", link: "https://halalpractitioner.com/halal-market-trends-2026/" }], 
+    differingOpinions: "Prohibited if the environment promotes 'Haram' activities like virtual gambling, prohibited avatars, or neglect of real-world religious duties.", isNew: true
+  },
+  {
+    id: 'h16', 
+    topic: "Spiritual Healing (Ruqyah)", 
+    category: "Lifestyle, Spirituality", 
+    status: "Halal", 
+    consensusLevel: "Absolute",
+    coreReasoning: "Using the recitation of the Quran and authentic prophetic supplications for mental, physical, or spiritual relief is explicitly permitted and encouraged.",
+    schoolsOfThought: [{ school: "Absolute Consensus", ruling: "Permitted (If using pure text)" }],
+    sources: [{ title: "Hadith on Ruqyah", author: "Sahih Muslim 2200", link: "https://sunnah.com/muslim:2200" }],
+    differingOpinions: "It is strictly conditional: it must use only the words of Allah or His Prophet, must be in a known language, and the user must believe that the healing comes entirely from Allah, not the words or the person reciting.", 
+    isNew: true
+  },
 ];
 
 export const MAKRUH_DATA = [
@@ -93,11 +105,20 @@ export const MAKRUH_DATA = [
     schoolsOfThought: [{ school: "Minority View", ruling: "Permitted (Ahlul Kitab)" }, { school: "Majority View", ruling: "Haram/Makruh without verification" }],
     sources: [{ title: "Quran 5:5 Context", author: "Tafsir Ibn Kathir", link: "https://quran.com/5:5/tafsirs/en-tafisr-ibn-kathir" }], differingOpinions: "The debate centers on whether modern secular slaughterhouses qualify as 'People of the Book'.", isNew: false
   },
-  {
-    id: 'm5', topic: "Shellfish (Shrimp/Crab)", category: "Food, Madhhab", status: "Makruh", consensusLevel: "Moderate",
-    coreReasoning: "Halal for the majority of Muslims, but considered Makruh (disliked) or Haram in the Hanafi school of thought.",
-    schoolsOfThought: [{ school: "Shafi'i, Maliki, Hanbali", ruling: "Halal" }, { school: "Hanafi", ruling: "Makruh Tahrimi" }],
-    sources: [{ title: "Fiqh of Seafood", author: "SeekersGuidance", link: "https://seekersguidance.org/answers/hanafi-fiqh/are-shellfish-halal/" }], differingOpinions: "Hanafis restrict permissible seafood strictly to anatomy resembling standard fish.", isNew: false
+{
+    id: 'm5', 
+    topic: "Non-Fish Seafood (Shrimp, Crab, Lobster)", 
+    category: "Food, Dietary", 
+    status: "Disputed / Makruh", 
+    consensusLevel: "Moderate",
+    coreReasoning: "While the Quran permits 'game of the sea,' scholars differ on whether this applies to all creatures or specifically to 'fish' (Samak).",
+    schoolsOfThought: [
+      { school: "Shafi'i, Maliki, Hanbali", ruling: "Halal" }, 
+      { school: "Hanafi", ruling: "Makruh Tahrimi (Prohibitively Disliked)" }
+    ],
+    sources: [{ title: "Al-Hidayah (Hanafi Manual)", author: "Burhan al-Din al-Marghinani" }],
+    differingOpinions: "This is a major point of divergence. Hanafis argue that only fish-shaped creatures are permissible. Because the Hanafi school represents nearly 1/3 of the global Muslim population, the status is categorized as Disputed/Makruh for safety.", 
+    isNew: false
   },
   {
     id: 'm6', topic: "Professional Gaming", category: "Lifestyle, Finance", status: "Makruh", consensusLevel: "Moderate",
@@ -128,7 +149,87 @@ export const MAKRUH_DATA = [
     coreReasoning: "Disliked (Makruh) to consume raw before going to the Masjid, out of respect for the angels and other worshippers.",
     schoolsOfThought: [{ school: "Consensus", ruling: "Makruh (Before congregational prayer)" }],
     sources: [{ title: "Prophetic Tradition", author: "Sahih Muslim", link: "https://sunnah.com/muslim:564a" }], differingOpinions: null, isNew: false
-  }
+  },
+  {
+    id: 'm11', topic: "Social Media Influencing", category: "Tech, Income, Ethics", status: "Makruh", consensusLevel: "Moderate",
+    coreReasoning: "Permissible if the content is educational/wholesome. However, it is often deemed Makruh due to the high risk of 'Riya' (showing off), vanity, and potential exposure of 'Awrah' or private family life for profit.",
+    schoolsOfThought: [{ school: "Contemporary Scholars", ruling: "Permitted with strict ethical bounds" }],
+    sources: [{ title: "Digital Ethics in Islam", author: "Dr. Yasir Qadhi", link: "https://www.youtube.com/watch?v=5vA_qPZpWbE" }], 
+    differingOpinions: "Strictly Haram if it involves promoting prohibited products or deceptive 'lifestyle' marketing.", isNew: true
+  },
+  {
+    id: 'm13', topic: "Hair Transplants", category: "Medical, Beauty", status: "Halal", consensusLevel: "High",
+    coreReasoning: "Considered a 'restoration of a defect' rather than 'changing the creation.' This distinguishes it from hair extensions (which are generally prohibited).",
+    schoolsOfThought: [{ school: "Consensus", ruling: "Permitted" }],
+    sources: [{ title: "Ruling on Hair Transplants", author: "IslamQA", link: "https://islamqa.info/en/answers/103339/is-hair-transplant-halal" }], 
+    differingOpinions: "Some maintain caution if the procedure is purely for excessive vanity beyond normal aging, but the majority see it as a medical remedy for hair loss.", isNew: false
+  },
+  {
+    id: 'm14', topic: "Using AI for Creative Work", category: "Tech, Ethics", status: "Disputed", consensusLevel: "Low",
+    coreReasoning: "Concerns arise regarding intellectual property (stealing from human artists) and the 'creation of life-like images' (Taswir).",
+    schoolsOfThought: [{ school: "Modernist View", ruling: "Permitted (Utility focus)" }, { school: "Traditionalist View", ruling: "Makruh/Haram (Animate beings)" }],
+    sources: [{ title: "AI and Islamic Law", author: "Yaheen Institute", link: "https://yaqeeninstitute.org/read/paper/the-ethics-of-artificial-intelligence-an-islamic-perspective" }], 
+    differingOpinions: "Universally accepted for non-animate subjects (landscapes, patterns) and scientific utility.", isNew: true
+  },
+  {
+    id: 'm15', topic: "Buying 'Followers' or 'Likes'", category: "Tech, Social", status: "Makruh", consensusLevel: "High",
+    coreReasoning: "Considered a form of 'Ghisht' (deception). It presents a false reality to the public and potential business partners.",
+    schoolsOfThought: [{ school: "Consensus", ruling: "Makruh / Haram (Deceptive)" }],
+    sources: [{ title: "Deception in Trade", author: "Sahih Muslim 102", link: "https://sunnah.com/muslim:102" }], 
+    differingOpinions: "If used for technical testing in a closed environment it is fine, but as a public metric, it is viewed as a breach of Islamic honesty.", isNew: true
+  },
+  {
+    id: 'm16', topic: "Animal Gelatin", category: "Food, Medicine, Ingredients", status: "Disputed", consensusLevel: "Moderate",
+    coreReasoning: "Haram if from swine or non-Zabihah animals. Scholars debate 'Istihalah' (chemical transformation)—whether the process turns it into a new, pure substance.",
+    schoolsOfThought: [{ school: "Strict View", ruling: "Prohibited unless Zabihah" }, { school: "Istihalah View", ruling: "Permitted if fully transformed" }],
+    sources: [{ title: "Gelatin Pantry Guide 2026", author: "Halal-Savvy RD", link: "https://halalmui.org/en/halal-skincare-trends-the-importance-of-checking-ingredients-and-processing/" }], 
+    differingOpinions: "Mainstream certifiers (MUI, JAKIM) generally avoid non-Zabihah gelatin to stay on the side of caution.", isNew: false
+  },
+  {
+    id: 'm17', 
+    topic: "Botox and Dermal Fillers", 
+    category: "Beauty, Medical, Cosmetics", 
+    status: "Disputed / Conditional", 
+    consensusLevel: "Moderate",
+    coreReasoning: "Permissible if used medically (migraines, muscle spasms) or to slow/reverse premature aging and tissue defects, because temporary cosmetic injections do not permanently alter Allah's creation (Taghyir).",
+    schoolsOfThought: [
+      { school: "Contemporary Majority", ruling: "Permissible with conditions" },
+      { school: "Traditionalist View", ruling: "Makruh / Prohibited if for dramatic alteration" }
+    ],
+    sources: [{ title: "Rulings on Cosmetic Injections", author: "Dar al-Ifta al-Misriyyah", link: "https://www.dar-alifta.org/en/fatwa/details/6261/botox-injections" }],
+    differingOpinions: "Strictly prohibited (Haram) if the intention is extreme, unnatural vanity (e.g., changing facial structure to match viral social media trends or exaggerating features beyond normal human proportions). The ingredients must also be sourced from pure (Tahir) compounds.", 
+    isNew: true
+  },
+  {
+    id: 'm18', 
+    topic: "Animal Rennet in Cheese", 
+    category: "Food, Ingredients, Dietary", 
+    status: "Disputed", 
+    consensusLevel: "Moderate",
+    coreReasoning: "The permissibility hinges on whether enzymes extracted from the stomach of a non-Zabiha animal carry the impurity of 'carrion' (Maytah). If from a pig, it is universally prohibited.",
+    schoolsOfThought: [
+      { school: "Hanafi / Ja'fari", ruling: "Permitted (Halal)" }, 
+      { school: "Shafi'i / Maliki / Hanbali", ruling: "Prohibited (Haram) if non-Zabiha" }
+    ],
+    sources: [{ title: "Is Rennet Halal?", author: "Halal Code Check Guide", link: "https://halalcodecheck.com/blog/is-rennet-halal/" }],
+    differingOpinions: "Imam Abu Hanifa ruled that rennet itself does not contain flowing blood ('life') and therefore cannot 'die' or become impure when the animal dies. The other three schools argue it becomes contaminated by the stomach's moisture. Note: The shortcut for consumers is to look for 'Microbial Rennet' (Mikrobielles Lab) or 'Suitable for Vegetarians' labels, which are universally Halal.", 
+    isNew: true
+  },
+  {
+    id: 'm19', 
+    topic: "Polygyny Restrictions in Marriage Contracts (Nikah)", 
+    category: "Social, Legal, Marriage", 
+    status: "Valid / Conditional", 
+    consensusLevel: "Moderate",
+    coreReasoning: "A marriage contract is based on mutually agreed conditions. The Prophet (pbuh) said: 'The conditions most deserving to be fulfilled are those by which you make marital relations lawful.' If a husband agrees not to take another wife, he must honor it.",
+    schoolsOfThought: [
+      { school: "Hanbali / Modern Family Laws", ruling: "Stipulation is fully binding; gives wife right to divorce if broken" }, 
+      { school: "Hanafi / Shafi'i / Maliki", ruling: "The stipulation is invalid/void, but the core marriage remains valid" }
+    ],
+    sources: [{ title: "Hadith on Marriage Conditions", author: "Sahih Bukhari 5151", link: "https://sunnah.com/bukhari:5151" }],
+    differingOpinions: "This is a major practical split. In the Hanbali school (and modern family codes in countries like Jordan, Morocco, and Egypt), breaking this condition gives the wife the immediate right to a no-fault judicial divorce with full financial dues. The Hanafi school traditionally argues you cannot stipulate away a general right granted by God, though they allow a workaround where the husband grants the wife the automatic right to divorce herself (Tafwid al-Talaq) if he marries again.", 
+    isNew: true
+  },
 ];
 
 export const HARAM_DATA = [
@@ -186,12 +287,91 @@ export const HARAM_DATA = [
     schoolsOfThought: [{ school: "Absolute Consensus", ruling: "Haram" }],
     sources: [{ title: "Hadith on Dietary Laws", author: "Sahih Bukhari", link: "https://sunnah.com/bukhari/72/77" }], differingOpinions: null, isNew: false
   },
+{
+    id: 'hr10', 
+    topic: "Commercial Insurance", 
+    category: "Finance", 
+    status: "Haram", 
+    consensusLevel: "High",
+    coreReasoning: "Standard commercial insurance is prohibited by major bodies due to elements of Riba (interest), Gharar (excessive uncertainty/risk), and Maysir (gambling-like structures).",
+    schoolsOfThought: [{ school: "IFA (OIC) & Majority", ruling: "Haram (Commercial/Conventional)" }],
+    sources: [{ title: "Resolution on Insurance", author: "Islamic Fiqh Academy", link: "https://iifa-aifi.org/en/1769.html" }], 
+    differingOpinions: "Takaful (cooperative insurance) is the Halal alternative. Note: Conventional insurance is permitted under the principle of 'Darurah' (necessity) ONLY when legally mandated by the state, such as mandatory third-party auto or health insurance.", 
+    isNew: false
+  },
   {
-    id: 'hr10', topic: "Usury-based Insurance", category: "Finance", status: "Haram", consensusLevel: "High",
-    coreReasoning: "Standard commercial insurance is often seen as containing Gharar (uncertainty) and Riba. Takaful (cooperative insurance) is the Halal alternative.",
-    schoolsOfThought: [{ school: "IFA (OIC)", ruling: "Haram (Commercial)" }],
-    sources: [{ title: "Resolution on Insurance", author: "Islamic Fiqh Academy", link: "https://iifa-aifi.org/en/1769.html" }], differingOpinions: "Permitted ONLY when legally mandated by the state (e.g., auto insurance).", isNew: false
-  }
+    id: 'hr11', topic: "Non-Consensual AI Media (Deepfakes)", category: "Tech, Ethics", status: "Haram", consensusLevel: "Absolute",
+    coreReasoning: "Creating or sharing intimate or deceptive images of others without consent is a grave violation of dignity (Karamah), privacy, and truth. It falls under slander (Ghibah) and spreading obscenity.",
+    schoolsOfThought: [{ school: "Absolute Consensus", ruling: "Haram" }],
+    sources: [{ title: "Deepfakes and Consent: 2026 Legal & Shariah Overview", author: "Queen Mary University / Islamic Ethics Board", link: "https://www.qmul.ac.uk/lac/our-legal-blog/2026-blogs/items/deepfakes-and-consent-the-law-finally-catches-up-.html" }], 
+    differingOpinions: null, isNew: true
+  },
+  {
+    id: 'hr12', topic: "Predatory High-Frequency Trading (HFT)", category: "Finance, Tech", status: "Haram", consensusLevel: "High",
+    coreReasoning: "Prohibited when it involves 'front-running' orders, creating artificial market volatility, or using 'Dark Pools' to gain an unfair information advantage over the general public, violating the principle of fair trade.",
+    schoolsOfThought: [{ school: "Contemporary Finance Scholars", ruling: "Haram (if predatory)" }],
+    sources: [{ title: "HFT and Dark Pools in Islamic Law", author: "Carter-Ruck 2026 Analysis", link: "https://www.carter-ruck.com/blog/high-frequency-trading-and-dark-pools/" }], 
+    differingOpinions: "Basic algorithmic trading for efficiency is permitted; the status becomes Haram only when the 'unlawful means' of market manipulation are employed.", isNew: true
+  },
+  {
+    id: 'hr13', topic: "Deceptive Dropshipping", category: "Finance, Commerce", status: "Haram", consensusLevel: "Moderate",
+    coreReasoning: "Strictly prohibited if the seller hides the fact that they do not own the stock, provides misleading delivery times, or sells 'low-quality' items as premium, violating the Prophetic command: 'Do not sell what you do not possess.'",
+    schoolsOfThought: [{ school: "Majority of Scholars", ruling: "Haram (without transparency)" }],
+    sources: [{ title: "Is Dropshipping Halal or Haram?", author: "AppScenic Ethics Guide 2026", link: "https://appscenic.com/blog/is-dropshipping-haram/" }], 
+    differingOpinions: "Can be rendered Halal (Permitted) if the contract is structured as a 'Salami' or 'Agency' (Wakalah) agreement where the customer knows the seller is a middleman.", isNew: false
+  },
+  {
+    id: 'hr14', topic: "Changing Creation (Extreme Aesthetics)", category: "Medical, Beauty", status: "Haram", consensusLevel: "High",
+    coreReasoning: "Permanent procedures done solely for vanity—such as changing nose shape for fashion, lip fillers to match trends, or 'fox eye' lifts—are considered an impermissible alteration of Allah's design.",
+    schoolsOfThought: [{ school: "Absolute Consensus", ruling: "Haram (for vanity)" }],
+    sources: [{ title: "Halal Skincare & Aesthetics Trends 2026", author: "MUI Singapore", link: "https://halalmui.org/en/halal-skincare-trends-the-importance-of-checking-ingredients-and-processing/" }], 
+    differingOpinions: "Strictly permitted (Halal) for reconstructive surgery following accidents, burns, or congenital defects to restore 'normal' function or appearance.", isNew: false
+  },
+  {
+    id: 'hr15', topic: "Intoxication-based VR/Gaming", category: "Tech, Lifestyle", status: "Haram", consensusLevel: "High",
+    coreReasoning: "Virtual environments or games designed to simulate the experience of 'getting high,' virtual alcohol consumption, or explicit 'Haram' behavior are prohibited as they desensitize the heart to sin (Iman).",
+    schoolsOfThought: [{ school: "Contemporary Scholars", ruling: "Haram" }],
+    sources: [{ title: "What is Halal Browsing?", author: "Kahf Browser 2026 Guide", link: "https://kahfbrowser.com/a-muslims-guide-to-safe-internet/" }], 
+    differingOpinions: null, isNew: true
+  },
+  {
+    id: 'hr16', 
+    topic: "Anabolic Steroids / Performance-Enhancing Drugs (PEDs)", 
+    category: "Health, Lifestyle, Sports", 
+    status: "Haram", 
+    consensusLevel: "High",
+    coreReasoning: "Prohibited due to the definitive, severe physical and psychological self-harm they cause, alongside the elements of fraud/cheating in sports. The Quran states: 'And make not your own hands contribute to your destruction' (2:195).",
+    schoolsOfThought: [{ school: "Contemporary Consensus", ruling: "Haram (for non-medical enhancement)" }],
+    sources: [{ title: "Ruling on PEDs in Sports", author: "Jordan Iftaa Council (Fatwa 3649)", link: "https://www.aliftaa.jo/research-fatwa-english/3649/What-is-the-ruling-of-sharia-on-taking-PEDS-in-sports" }], 
+    differingOpinions: "Universally permitted (Halal) under the principle of 'Darurah' (necessity) if legally prescribed by a licensed physician to treat a legitimate medical condition (e.g., hormone deficiencies, severe muscle wasting, or autoimmune therapy).", 
+    isNew: true
+  },
+  {
+    id: 'hr17', 
+    topic: "Wearing Gold (For Men)", 
+    category: "Lifestyle, Fashion", 
+    status: "Haram", 
+    consensusLevel: "Absolute",
+    coreReasoning: "Explicitly forbidden for males by Prophetic decree to prevent excessive vanity, arrogance, and material extravagance. The prohibition applies to jewelry, watches, rings, and clothing woven with gold.",
+    schoolsOfThought: [
+      { school: "Absolute Consensus", ruling: "Haram for Men / Halal for Women" }
+    ],
+    sources: [{ title: "Hadith on Gold and Silk", author: "Sunan an-Nasa'i 5144", link: "https://sunnah.com/nasai:5144" }],
+    differingOpinions: "White gold is also prohibited if it is made by alloying real yellow gold with other metals. However, alternative premium metals like Platinum, Titanium, and Stainless Steel are completely permissible for men. Dental or medical gold use is permitted if no viable alternative exists.", 
+    isNew: false
+  },
+  {
+    id: 'hr18', 
+    topic: "Superstitious Exorcisms & Folk Magic", 
+    category: "Lifestyle, Spirituality", 
+    status: "Haram", 
+    consensusLevel: "Absolute",
+    coreReasoning: "Practices involving physical abuse, summoning entities, writing talismans/amulets with hidden symbols, or charging money for magical 'cleansings' are strictly forbidden and fall under Shirk (associating partners with Allah).",
+    schoolsOfThought: [{ school: "Absolute Consensus", ruling: "Strictly Prohibited" }],
+    sources: [{ title: "Hadith on Spells and Amulets", author: "Sunan Abi Dawud 3883", link: "https://sunnah.com/abudawud:3883" }],
+    differingOpinions: "Mainstream Islamic scholarship mandates that physical and neurological symptoms (like seizures, psychosis, or delirium) must be treated by medical and psychiatric professionals first. Relying on supernatural folk-healers while ignoring medical science is heavily censured.", 
+    isNew: true
+  },
 ];
 
 // Note: Ensure you update your main DATABASE export variable to combine these if you separated them!
