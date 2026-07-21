@@ -230,6 +230,50 @@ export const MAKRUH_DATA = [
     differingOpinions: "This is a major practical split. In the Hanbali school (and modern family codes in countries like Jordan, Morocco, and Egypt), breaking this condition gives the wife the immediate right to a no-fault judicial divorce with full financial dues. The Hanafi school traditionally argues you cannot stipulate away a general right granted by God, though they allow a workaround where the husband grants the wife the automatic right to divorce herself (Tafwid al-Talaq) if he marries again.", 
     isNew: true
   },
+  {
+    id: 'm20', 
+    topic: "Returning 'Wa Alaikum As-Salam' to Non-Muslims", 
+    category: "Social, Interpersonal, Etiquette", 
+    status: "Disputed / Conditional", 
+    consensusLevel: "Moderate",
+    coreReasoning: "Based on a Prophetic command to reply to non-Muslim greetings with only 'Wa Alaikum' (and upon you) rather than the full blessing of peace, originally implemented because hostile groups used wordplay to insult Muslims.",
+    schoolsOfThought: [
+      { school: "Traditional Majority View", ruling: "Obligatory to shorten the reply to just 'Wa Alaikum' (and upon you)" },
+      { school: "Minority / Contemporary View", ruling: "Permissible to return the full 'Wa Alaikum As-Salam' if the greeting was clear and peaceful" }
+    ],
+    sources: [{ title: "Sahih al-Bukhari 6257", author: "Imam al-Bukhari", link: "https://sunnah.com/bukhari:6257" }],
+    differingOpinions: "The strict reduction was context-specific. In 7th-century Medina, certain hostile groups would subtly twist the words and say 'As-Sāmu Alaikum' (Death be upon you) instead of 'As-Salāmu Alaikum' (Peace be upon you). The Prophet instructed Muslims to simply say 'Wa Alaikum' so that whatever they intended would naturally bounce back onto them. Classical scholars like Ibn al-Qayyim and modern jurists argue that if a non-Muslim clearly and genuinely wishes you peace today, the overarching Quranic mandate of justice (4:86) allows or even requires returning the greeting equally.", 
+    isNew: true
+  },
+  {
+    id: 'm21', 
+    topic: "Sacred Location Prayer Multipliers", 
+    category: "Ritual, Worship, Lifestyle", 
+    status: "Halal / Virtuous", 
+    consensusLevel: "Absolute",
+    coreReasoning: "Explicitly defined by Prophetic text to incentivize communal worship and honor the unique spiritual sanctity of Islam's three holiest sites.",
+    schoolsOfThought: [
+      { school: "Absolute Consensus", ruling: "Universally Valid & Highly Recommended (Mustahabb)" }
+    ],
+    sources: [{ title: "Hadith on Prayer Multiplication", author: "Sunan Ibn Majah 1406", link: "https://sunnah.com/ibnmajah:1406" }],
+    differingOpinions: "While the reward value is multiplied exponentially, scholars emphasize that these multipliers apply only to spiritual reward (Thawab) and do not replace the technical number of required missed prayers (Qada). The exact breakdown is fixed by text: a regular congregation is worth 27x, Al-Aqsa in Jerusalem is worth 500x, the Prophet's Mosque in Medina is worth 1,000x, and the Kaaba (Masjid al-Haram) in Mecca is worth 100,000x over a solo prayer at home.", 
+    isNew: true
+  },
+  {
+    id: 'm22', 
+    topic: "Murabaha Contracts & Islamic Banking", 
+    category: "Finance, Economics, Lifestyle", 
+    status: "Disputed / Systemic", 
+    consensusLevel: "Low",
+    coreReasoning: "While Murabaha satisfies the strict technical letter of Islamic contract law by using a cost-plus-profit sale structure rather than a direct cash loan, critics argue it bypasses the spiritual intent of the prohibition on interest (Riba) by functioning identically to commercial debt.",
+    schoolsOfThought: [
+      { school: "Global Shariah Boards View", ruling: "Halal (Permissible trade contract under necessity)" },
+      { school: "Heterodox / Critical Economists View", ruling: "Makruh / Highly Problematic (Rebranded interest masquerading as profit)" }
+    ],
+    sources: [{ title: "Quran 2:275", author: "Surah Al-Baqarah", link: "https://quran.com/2/275" }],
+    differingOpinions: "Proponents argue that Murabaha is legally distinct because the bank takes asset ownership risk, and the total debt amount is fixed at day one and cannot compound over time with late fees like conventional interest. Conversely, critics and rigorous contemporary scholars point out that because these profit margins are calculated using standard interest rate benchmarks (like EURIBOR) and the risk is almost entirely transferred back to the consumer via structural clauses, the system amounts to a semantic loophole that charges a fee matching the time-value of money, failing to achieve the risk-sharing, non-exploitative goals of Islamic economics.", 
+    isNew: true
+  }
 ];
 
 export const HARAM_DATA = [
@@ -796,5 +840,71 @@ export const CONTROVERSIES_DATA = [
       { title: "Tafsir Al-Razi", author: "Fakhr al-Din al-Razi" }
     ],
     contemporaryScholars: [] 
+  },
+  {
+    topic: "Quranic Preservation",
+    claim: '"The Quran was altered because a later ruler ordered all variant copies to be burned."',
+    context: 'Context: Caliph Uthman standardized the written text around 650 CE using the primary Prophetic dialect (Quraysh) to stop regional pronunciation arguments, not to alter the message.',
+    elaboration: "As Islam rapidly expanded, different regions began fighting over proper pronunciation styles (Ahruf) that the Prophet had originally permitted for ease of memorization. Uthman gathered the original master manuscript compiled right after the Prophet's death, made authorized copies, and ordered personal study notes and unverified regional variants destroyed to unite the community. Modern archaeology and carbon-dating (like the Birmingham Quran manuscript, dated to the lifetime of the Prophet) prove that the textual skeleton has remained entirely unchanged since the beginning.",
+    sources: [
+      { title: "Sahih al-Bukhari 4987", author: "Imam al-Bukhari", link: "https://sunnah.com/bukhari:4987" },
+      { title: "The Birmingham Qur'an Manuscript", author: "University of Birmingham", link: "https://www.birmingham.ac.uk/news/2015/birmingham-quran-manuscript-among-oldest-in-the-world" }
+    ],
+    contemporaryScholars: []
+  },
+  {
+    topic: "Ethical Sourcing",
+    claim: '"All meat stamped with a Halal label is automatically pure and ethical to consume."',
+    context: 'Context: Industrial factory farming often satisfies the baseline legal rules of Islamic slaughter (Halal), but the systemic animal confinement and distress frequently violate the Quranic requirement of being wholesome and ethical (Tayyib).',
+    elaboration: "The Quran explicitly commands believers to eat what is both permissible (Halal) and pure/ethical (Tayyib). While mass commercial slaughter lines can satisfy the basic legal requirements—such as a swift cut by a person of faith while invoking God's name—the lifecycle of industrial livestock involves severe confinement, stress, and unnatural practices. A growing movement of contemporary scholars argues that ignoring animal welfare (Ihsan) during the animal's life compromises the integrity of the product, making the uncritical consumption of factory-farmed food highly problematic despite the technical stamp.",
+    sources: [
+      { title: "Quran 2:168", author: "Surah Al-Baqarah", link: "https://quran.com/2/168" },
+      { title: "Animal Welfare in Islam", author: "Al-Hafiz Basheer Ahmad Masri" }
+    ],
+    contemporaryScholars: []
+  },
+  {
+    topic: "Free Will",
+    claim: '"Human free will cannot exist if everything is already written in a divine book of destiny."',
+    context: 'Context: God writing down the future is an exercise of His absolute, timeless knowledge (knowing what choices we *will* make), not a forced compulsion that strips humans of their power to choose.',
+    elaboration: "Islamic theology bridges this paradox by separating 'Knowledge' from 'Compulsion.' The divine record (Al-Lauh al-Mahfuz) exists outside the linear timeline of human perception. God knows what a person will choose before they choose it, but the human remains the active agent executing the choice. Classical scholars use the analogy of a teacher who accurately writes down exactly which grades their students will earn based on their known work ethics—the teacher's accurate foreknowledge does not cause the students to pass or fail; the students' actions do. Humans have the full freedom to intend and act, while God alone creates the cosmic outcomes.",
+    sources: [
+      { title: "Quran 13:11", author: "Surah Ar-Ra'd", link: "https://quran.com/13/11" },
+      { title: "Al-Aqidah al-Tahawiyyah", author: "Imam al-Tahawi" }
+    ],
+    contemporaryScholars: []
+  },
+  {
+    topic: "72 Virgins",
+    claim: '"Every man who enters paradise is automatically granted 72 virgins as a reward."',
+    context: 'Context: The number "72" never appears anywhere in the Quran. It originates from an isolated 9th-century narration in Sunan al-Tirmidhi that classical scholars historically flagged as weak (Da\'if) and structurally flawed.',
+    elaboration: "The Quran describes Paradise using spiritual and sensory allegories—such as lush gardens and pure companions (Hoor)—to convey ultimate peace. The hyper-specific number '72' comes from a single report (Tirmidhi 2562) that the compiler himself flagged as 'Gharib' (isolated/strange). Classical critics like Ibn Hajar al-Asqalani later classified it as weak due to unreliable narrators in the chain. Furthermore, the text specifically isolated this context to wartime martyrs, not average believers. The myth went viral globally post-9/11 when Western media and pop culture amplified this obscure, fringe text into standard internet dogma.",
+    sources: [
+      { title: "Jami` at-Tirmidhi 2562", author: "Imam at-Tirmidhi", link: "https://sunnah.com/tirmidhi:2562" },
+      { title: "Fath al-Bari", author: "Ibn Hajar al-Asqalani" }
+    ],
+    contemporaryScholars: []
+  },
+  {
+    topic: "Sperm is made between the Ribs and Backbone",
+    claim: '"The Quran makes a biological error by claiming sperm is produced between the spine and the ribs."',
+    context: 'Context: Surah At-Tariq describes human origin using classical Arabic idioms or referencing embryonic structural development, not a modern post-pubertal anatomical map of sperm production.',
+    elaboration: "Critics point out that adult human sperm is strictly produced in the testes, which sit in the scrotum, making a literal translation of fluid originating between the backbone (Sulb) and ribs (Tara'ib) anatomically incorrect. Islamic scholars and linguists resolve this through two main perspectives. First, grammatically, the pronoun 'emerging' can modify the word 'human' rather than the 'fluid'—meaning the verse describes a baby emerging from the mother's womb (which expands into the ribcage area). Second, from an embryological standpoint, the primordial germ cells that form the testes and ovaries originate in the embryo's upper abdomen—directly between the backbone and the developmental rib area—before migrating down to the pelvis and scrotum before birth.",
+    sources: [
+      { title: "Quran 86:6-7", author: "Surah At-Tariq", link: "https://quran.com/86/6-7" },
+      { title: "Tafsir Al-Qurtubi", author: "Imam Al-Qurtubi" }
+    ],
+    contemporaryScholars: []
+  },
+{
+    topic: "The Prophets more than 4 Wives",
+    claim: '"Muhammad practiced double standards by marrying eleven to twelve women and holding nine at one time while capping his followers at four."',
+    context: 'Context: While Islamic law limits Muslim men to four concurrent wives, the Quran explicitly granted Muhammad a unique legal status regarding his marriages, which ultimately totaled eleven to twelve unions over his lifetime, with nine concurrent wives at the time of the restriction.',
+    elaboration: "Critics point to the structural asymmetry between the general legal cap of four wives and Muhammad's personal marriages—specifically holding nine concurrent wives while demanding strict limits from his followers—as a profound moral contradiction and use of executive privilege. Islamic scholarship frames this division differently, arguing that these marriages were political, tribal, and pastoral duties rather than personal indulgence. Except for Aisha, all of his wives were widows or divorcees taken to cement peace treaties with hostile clans or to explicitly break entrenched pre-Islamic social stigmas. Because these unions carried public legislative weight, the Quran barred him from divorcing them or marrying anyone else later in life, isolating the arrangement to his specific historical role.",
+    sources: [
+      { title: "Quran 33:50", author: "Surah Al-Ahzab", link: "https://quran.com/33/50" },
+      { title: "The Life of the Prophet Muhammad", author: "Ibn Kathir" }
+    ],
+    contemporaryScholars: []
   }
 ];
